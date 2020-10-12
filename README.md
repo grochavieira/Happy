@@ -16,7 +16,7 @@
  
 </p>
 <h1 align="center">
-    Happy
+    <img src="./assets/logo.svg" />
 </h1>
 
 <h4 align="center"> 
@@ -38,7 +38,7 @@
 
 ## 💻 Sobre o projeto
 
-Uma aplicação para cadastrar orfanatos de São Paulo, para que usuários possam encontrar informações sobre eles.
+Uma aplicação para cadastrar orfanatos de São Bernardo do Campo (SP), para que usuários possam encontrar informações sobre eles.
 
 ---
 
@@ -48,6 +48,10 @@ Uma aplicação para cadastrar orfanatos de São Paulo, para que usuários possa
 
 - [ ] Back-end;
 - [ ] Front-end;
+  - [x] Landing page;
+  - [ ] Maps page;
+  - [ ] Details page;
+  - [ ] Form page;
 - [ ] Mobile;
 
 ---
