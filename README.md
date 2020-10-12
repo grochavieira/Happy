@@ -16,7 +16,7 @@
  
 </p>
 <h1 align="center">
-    <img src="./assets/logo.svg" />
+    <img src="./assets/logo_happy.svg" />
 </h1>
 
 <h4 align="center"> 
