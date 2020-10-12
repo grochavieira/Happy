@@ -1,10 +1,10 @@
 export default {
-  title: "light",
+  title: "dark",
 
   colors: {
-    primary: "#00C7C7",
-    secondary: "#29B6D1",
-    secondaryDark: "#2491a6",
+    primary: "#1C110A",
+    secondary: "#25160D",
+    secondaryDark: "#170d08",
     tertiary: "#FFD666",
     gradientText: "#fff",
     title: "#4D6F80",

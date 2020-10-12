@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import landingImg from "../../images/landing.svg";
+import landingImgDark from "../../images/landing-dark.svg";
 
 export const Container = styled.div`
   width: 100vw;
@@ -29,7 +30,11 @@ export const Content = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
-  background: url(${landingImg}) no-repeat 80% center;
+  background: ${(props) =>
+      props.theme.title === "dark"
+        ? `url(${landingImgDark}) no-repeat 80%`
+        : `url(${landingImg}) no-repeat 80%`}
+    center;
 `;
 
 export const Main = styled.main`
@@ -57,11 +62,13 @@ export const Location = styled.div`
   line-height: 3.4rem;
 
   display: flex;
+  align-items: flex-end;
   flex-direction: column;
 
   text-align: right;
 
   strong {
+    margin-top: 0.5rem;
     font-weight: 800;
   }
 `;
@@ -73,7 +80,7 @@ export const Enter = styled.a`
 
   width: 8rem;
   height: 8rem;
-  background: #ffd666;
+  background: ${(props) => props.theme.colors.tertiary};
   border-radius: 3rem;
 
   display: flex;
@@ -84,6 +91,7 @@ export const Enter = styled.a`
   transition: background-color 0.2s;
 
   &:hover {
-    background: #96feff;
+    background: ${(props) =>
+      props.theme.title === "dark" ? `#fff` : " #96feff"};
   }
 `;

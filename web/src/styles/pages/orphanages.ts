@@ -59,7 +59,7 @@ export const CreateOrphanage = styled.a`
 
   width: 6.4rem;
   height: 6.4rem;
-  background: #15c3d6;
+  background: ${(props) => props.theme.colors.secondary};
   border-radius: 2rem;
 
   display: flex;
@@ -70,6 +70,6 @@ export const CreateOrphanage = styled.a`
   transition: background-color 0.2s;
 
   &:hover {
-    background: #17d6eb;
+    background: ${(props) => props.theme.colors.secondaryDark};
   }
 `;
