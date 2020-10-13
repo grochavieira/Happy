@@ -48,10 +48,6 @@ Uma aplicação para cadastrar orfanatos de São Bernardo do Campo (SP), para qu
 
 - [ ] Back-end;
 - [ ] Front-end;
-  - [x] Landing page;
-  - [x] Maps page;
-  - [ ] Details page;
-  - [ ] Form page;
 - [ ] Mobile;
 
 ---
