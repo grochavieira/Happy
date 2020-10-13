@@ -58,13 +58,13 @@ Uma aplicação para cadastrar orfanatos de São Bernardo do Campo (SP), para qu
 
 ## 🚀 Como executar o projeto
 
-<!-- Este projeto é divido em três partes:
+Este projeto é divido em três partes:
 
-1. Backend (pasta server)
+1. Backend (pasta backend)
 2. Frontend (pasta web)
 3. Mobile (pasta mobile)
 
-💡O Frontend precisa que o Backend esteja sendo executado para funcionar.
+💡O Frontend e o Mobile precisam que o Backend esteja sendo executado para funcionar.
 
 ### Pré-requisitos
 
@@ -83,17 +83,17 @@ $ git clone https://github.com/grochavieira/Happy.git
 # Acesse a pasta do projeto no terminal/cmd
 $ cd Happy
 
-# Vá para a pasta server
-$ cd server
+# Vá para a pasta backend
+$ cd backend
 
 # Instale as dependências com npm
 $ npm install
 
-# Crie o banco de dados do sistema
-$ npm run knex:migrate
+# Crie o banco de dados do sistema, caso não tenha
+$ npm typeorm migration:run
 
 # Execute a aplicação
-$ npm run start
+$ npm run dev
 
 # O servidor inciará na porta:3333 - acesse http://localhost:3333
 
@@ -120,11 +120,55 @@ $ yarn start
 
 # A aplicação será aberta na porta:3000 - acesse http://localhost:3000
 
-``` -->
+```
+
+#### 🧭 Rodando a aplicação mobile (App)
+
+```bash
+
+# ainda não foi iniciado
+
+```
 
 ---
 
 ## 🛠 Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:
+
+#### **Website** ([React](https://reactjs.org/) + [TypeScript](https://www.typescriptlang.org/))
+
+- **[React Router Dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)**
+- **[React Icons](https://react-icons.github.io/react-icons/)**
+- **[Leaflet](https://leafletjs.com/)**
+- **[React-Leaflet](https://react-leaflet.js.org/)**
+- **[Mapbox](https://www.mapbox.com/)**
+<!-- - **[Axios](https://github.com/axios/axios)** -->
+<!-- - **[React Dropzone](https://github.com/react-dropzone/react-dropzone)** -->
+
+> Veja o arquivo [package.json](https://github.com/grochavieira/Happy/blob/master/web/package.json)
+
+#### **Server** ([NodeJS](https://nodejs.org/en/) + [TypeScript](https://www.typescriptlang.org/))
+
+- **[Express](https://expressjs.com/)**
+- **[CORS](https://expressjs.com/en/resources/middleware/cors.html)**
+- **[TypeORM](https://typeorm.io/#/)**
+- **[SQLite](https://github.com/mapbox/node-sqlite3)**
+- **[ts-node](https://github.com/TypeStrong/ts-node)**
+- **[Multer](https://github.com/expressjs/multer)**
+- **[Yup](https://github.com/jquense/yup)**
+
+> Veja o arquivo [package.json](https://github.com/grochavieira/Happy/blob/master/server/package.json)
+
+#### **Mobile** ([React Native](https://reactnative.dev/) + [TypeScript](https://www.typescriptlang.org/))
+
+#### **Utilitários**
+
+- Editor: **[Visual Studio Code](https://code.visualstudio.com/)**
+- Teste do Banco de Dados: **[Beekeper-Studio](https://www.beekeeperstudio.io/)**
+- Teste de API: **[Insomnia](https://insomnia.rest/)**
+- Ícones: **[Feather Icons](https://feathericons.com/)**
+- Fontes: **[Nunito](https://fonts.google.com/specimen/Nunito)**
 
 ---
 
