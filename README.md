@@ -46,8 +46,8 @@ Uma aplicação para cadastrar orfanatos de São Bernardo do Campo (SP), para qu
 
 ## ⚙️ Funcionalidades
 
-- [ ] Back-end;
-- [ ] Front-end;
+- [x] Back-end;
+- [x] Front-end;
 - [ ] Mobile;
 
 ---
@@ -143,8 +143,8 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - **[Leaflet](https://leafletjs.com/)**
 - **[React-Leaflet](https://react-leaflet.js.org/)**
 - **[Mapbox](https://www.mapbox.com/)**
-<!-- - **[Axios](https://github.com/axios/axios)** -->
-<!-- - **[React Dropzone](https://github.com/react-dropzone/react-dropzone)** -->
+  <!-- - **[Axios](https://github.com/axios/axios)** -->
+  <!-- - **[React Dropzone](https://github.com/react-dropzone/react-dropzone)** -->
 
 > Veja o arquivo [package.json](https://github.com/grochavieira/Happy/blob/master/web/package.json)
 
