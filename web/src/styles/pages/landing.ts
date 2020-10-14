@@ -9,7 +9,7 @@ export const Container = styled.div`
   background: linear-gradient(
     329.54deg,
     ${(props) => props.theme.colors.primary} 0%,
-    ${(props) => props.theme.colors.secondary} 100%
+    ${(props) => props.theme.colors.primaryLight} 100%
   );
   display: flex;
   justify-content: center;
@@ -80,7 +80,7 @@ export const Enter = styled.a`
 
   width: 8rem;
   height: 8rem;
-  background: ${(props) => props.theme.colors.tertiary};
+  background: ${(props) => props.theme.colors.secondary};
   border-radius: 3rem;
 
   display: flex;

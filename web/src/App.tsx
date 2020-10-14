@@ -6,6 +6,7 @@ import GlobalStyle from "./styles/global";
 import usePersistedState from "./utils/usePersistedState";
 
 import Routes from "./routes";
+import "leaflet/dist/leaflet.css";
 
 function App() {
   const [theme, setTheme] = usePersistedState<DefaultTheme>("theme", light);

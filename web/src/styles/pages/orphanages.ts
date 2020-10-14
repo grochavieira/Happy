@@ -10,6 +10,44 @@ export const Container = styled.div`
   .leaflet-container {
     z-index: 5;
   }
+
+  .map-popup .leaflet-popup-content-wrapper {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    box-shadow: none;
+  }
+
+  .map-popup .leaflet-popup-content {
+    color: ${(props) => props.theme.colors.primary};
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0.8rem 1.2rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .map-popup .leaflet-popup-content a {
+    width: 4.8rem;
+    height: 4.8rem;
+    background: ${(props) => props.theme.colors.primary};
+    /* box-shadow: 1.7rem 2.7rem 4.1rem rgba(23, 142, 166, 0.16); */
+    border-radius: 1.2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      font-size: 2rem;
+      color: ${(props) => props.theme.colors.gradientText};
+    }
+  }
+
+  .map-popup .leaflet-popup-tip-container {
+    display: none;
+  }
 `;
 
 export const Aside = styled.aside`
@@ -17,7 +55,7 @@ export const Aside = styled.aside`
   background: linear-gradient(
     329.54deg,
     ${(props) => props.theme.colors.primary} 0%,
-    ${(props) => props.theme.colors.secondary} 100%
+    ${(props) => props.theme.colors.primaryLight} 100%
   );
   padding: 8rem;
 
@@ -59,7 +97,7 @@ export const CreateOrphanage = styled.a`
 
   width: 6.4rem;
   height: 6.4rem;
-  background: ${(props) => props.theme.colors.secondary};
+  background: ${(props) => props.theme.colors.primaryLight};
   border-radius: 2rem;
 
   display: flex;
@@ -70,6 +108,6 @@ export const CreateOrphanage = styled.a`
   transition: background-color 0.2s;
 
   &:hover {
-    background: ${(props) => props.theme.colors.secondaryDark};
+    background: ${(props) => props.theme.colors.primaryDark};
   }
 `;

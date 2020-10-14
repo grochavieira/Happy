@@ -18,6 +18,9 @@ declare module "styled-components" {
       title: string;
       text: string;
       background: string;
+      formBackground: string;
+      inputBackground: string;
+      borderColor: string;
     };
   }
 }
