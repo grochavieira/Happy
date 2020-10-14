@@ -143,8 +143,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - **[Leaflet](https://leafletjs.com/)**
 - **[React-Leaflet](https://react-leaflet.js.org/)**
 - **[Mapbox](https://www.mapbox.com/)**
-  <!-- - **[Axios](https://github.com/axios/axios)** -->
-  <!-- - **[React Dropzone](https://github.com/react-dropzone/react-dropzone)** -->
+- **[Axios](https://github.com/axios/axios)**
 
 > Veja o arquivo [package.json](https://github.com/grochavieira/Happy/blob/master/web/package.json)
 
