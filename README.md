@@ -56,10 +56,25 @@ Uma aplicação para cadastrar orfanatos de São Bernardo do Campo (SP), para qu
 
 ### front-end web
 
-<h1 align="center">
-    <img width="300px" src="./assets/light_landing.PNG" />
-    <img width="300px" src="./assets/dark_landing.PNG " />
-</h1>
+<div align="center">
+    <img width="350px" src="./assets/light_landing.PNG" />
+    <img width="350px" src="./assets/dark_landing.PNG " />
+</div>
+
+<div align="center">
+    <img width="350px" src="./assets/light_map.PNG" />
+    <img width="350px" src="./assets/dark_map.PNG " />
+</div>
+
+<div align="center">
+    <img width="350px" src="./assets/light_form.PNG" />
+    <img width="350px" src="./assets/dark_form.PNG " />
+</div>
+
+<div align="center">
+    <img width="350px" src="./assets/light_details.PNG" />
+    <img width="350px" src="./assets/dark_details.PNG " />
+</div>
 
 ---
 
