@@ -126,7 +126,20 @@ $ yarn start
 
 ```bash
 
-# ainda não foi iniciado
+# Clone este repositório
+$ git clone https://github.com/grochavieira/Happy.git
+
+# Acesse a pasta do projeto no seu terminal/cmd
+$ cd Happy
+
+# Vá para a pasta da aplicação Mobile
+$ cd mobile
+
+# Instale as dependências
+$ yarn install
+
+# Execute a aplicação em modo de desenvolvimento
+$ yarn start
 
 ```
 
@@ -144,6 +157,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - **[React-Leaflet](https://react-leaflet.js.org/)**
 - **[Mapbox](https://www.mapbox.com/)**
 - **[Axios](https://github.com/axios/axios)**
+- **[Styled Components](https://styled-components.com/)**
 
 > Veja o arquivo [package.json](https://github.com/grochavieira/Happy/blob/master/web/package.json)
 
@@ -157,13 +171,22 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - **[Multer](https://github.com/expressjs/multer)**
 - **[Yup](https://github.com/jquense/yup)**
 
-> Veja o arquivo [package.json](https://github.com/grochavieira/Happy/blob/master/server/package.json)
+> Veja o arquivo [package.json](https://github.com/grochavieira/Happy/blob/master/backend/package.json)
 
 #### **Mobile** ([React Native](https://reactnative.dev/) + [TypeScript](https://www.typescriptlang.org/))
+
+- **[Expo](https://expo.io/)**
+- **[React Native Maps](https://github.com/react-native-maps/react-native-maps)**
+- **[Styled Components](https://styled-components.com/)**
+- **[React Navigation](https://reactnavigation.org/)**
+- **[Expo Google Fonts](https://github.com/expo/google-fonts)**
+
+> Veja o arquivo [package.json](https://github.com/grochavieira/Happy/blob/master/mobile/package.json)
 
 #### **Utilitários**
 
 - Editor: **[Visual Studio Code](https://code.visualstudio.com/)**
+- Teste Mobile: **[Expo APP](https://expo.io/)**
 - Teste do Banco de Dados: **[Beekeper-Studio](https://www.beekeeperstudio.io/)**
 - Teste de API: **[Insomnia](https://insomnia.rest/)**
 - Ícones: **[Feather Icons](https://feathericons.com/)**
