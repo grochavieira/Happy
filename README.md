@@ -122,7 +122,7 @@ $ yarn start
 
 ```
 
-#### 🧭 Rodando a aplicação mobile (App)
+#### 📱 Rodando a aplicação mobile (App)
 
 ```bash
 
