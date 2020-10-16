@@ -76,6 +76,43 @@ Uma aplicação para cadastrar orfanatos de São Bernardo do Campo (SP), para qu
     <img width="100%" src="./assets/dark_details.gif " />
 </div>
 
+### mobile
+
+<div align="center">
+    <img width="100%" src="./assets/light_home.gif" />
+    <img width="100%" src="./assets/dark_home.gif " />
+</div>
+
+<div align="center">
+    <img width="100%" src="./assets/light_map_app.gif" />
+    <img width="100%" src="./assets/dark_map_app.gif " />
+</div>
+
+<div align="center">
+    <img width="100%" src="./assets/light_details_1.gif" />
+    <img width="100%" src="./assets/dark_details_1.gif " />
+</div>
+
+<div align="center">
+    <img width="100%" src="./assets/light_details_2.gif" />
+    <img width="100%" src="./assets/dark_details_2.gif " />
+</div>
+
+<div align="center">
+    <img width="100%" src="./assets/light_choose_position.gif" />
+    <img width="100%" src="./assets/dark_choose_position.gif " />
+</div>
+
+<div align="center">
+    <img width="100%" src="./assets/light_form_app1.gif" />
+    <img width="100%" src="./assets/dark_form_app1.gif " />
+</div>
+
+<div align="center">
+    <img width="100%" src="./assets/light_form_app2.gif" />
+    <img width="100%" src="./assets/dark_form_app2.gif " />
+</div>
+
 ---
 
 ## 🚀 Como executar o projeto
