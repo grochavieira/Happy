@@ -30,7 +30,6 @@ interface Orphanage {
     url: string;
     id: number;
   }>;
-  // id: number;
 }
 
 interface OrphanageParams {

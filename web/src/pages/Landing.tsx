@@ -6,6 +6,7 @@ import {
   Main,
   Location,
   Enter,
+  RegisterButton,
 } from "../styles/pages/landing";
 import Switch from "react-switch";
 import { Link } from "react-router-dom";
@@ -27,6 +28,9 @@ const Landing: React.FC<Props> = ({ toggleTheme }) => {
         <Main>
           <h1>Leve felicidade para o mundo</h1>
           <p>Visite orfanatos e mude o dia de muitas crianças.</p>
+          <Link to="/register">
+            <RegisterButton>Cadastre-se</RegisterButton>
+          </Link>
         </Main>
         <Location>
           <Switch

@@ -73,6 +73,32 @@ export const Location = styled.div`
   }
 `;
 
+export const RegisterButton = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30rem;
+  height: 8rem;
+  background: ${(props) => props.theme.colors.secondary};
+  border-radius: 3rem;
+
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 3rem;
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background: ${(props) =>
+      props.theme.title === "dark" ? `#fff` : " #96feff"};
+  }
+`;
+
 export const Enter = styled.a`
   position: absolute;
   right: 0;
