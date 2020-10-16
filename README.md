@@ -79,38 +79,38 @@ Uma aplicação para cadastrar orfanatos de São Bernardo do Campo (SP), para qu
 ### mobile
 
 <div align="center">
-    <img width="50%" src="./assets/light_home.png" />
-    <img width="50%" src="./assets/dark_home.png " />
+    <img width="40%" src="./assets/light_home.png" />
+    <img width="40%" src="./assets/dark_home.png " />
 </div>
 
 <div align="center">
-    <img width="50%" src="./assets/light_map_app.png" />
-    <img width="50%" src="./assets/dark_map_app.png " />
+    <img width="40%" src="./assets/light_map_app.png" />
+    <img width="40%" src="./assets/dark_map_app.png " />
 </div>
 
 <div align="center">
-    <img width="50%" src="./assets/light_details_1.png" />
-    <img width="50%" src="./assets/dark_details_1.png " />
+    <img width="40%" src="./assets/light_details_1.png" />
+    <img width="40%" src="./assets/dark_details_1.png " />
 </div>
 
 <div align="center">
-    <img width="50%" src="./assets/light_details_2.png" />
-    <img width="50%" src="./assets/dark_details_2.png " />
+    <img width="40%" src="./assets/light_details_2.png" />
+    <img width="40%" src="./assets/dark_details_2.png " />
 </div>
 
 <div align="center">
-    <img width="50%" src="./assets/light_choose_position.png" />
-    <img width="50%" src="./assets/dark_choose_position.png " />
+    <img width="40%" src="./assets/light_choose_position.png" />
+    <img width="40%" src="./assets/dark_choose_position.png " />
 </div>
 
 <div align="center">
-    <img width="50%" src="./assets/light_form_app1.png" />
-    <img width="50%" src="./assets/dark_form_app1.png " />
+    <img width="40%" src="./assets/light_form_app1.png" />
+    <img width="40%" src="./assets/dark_form_app1.png " />
 </div>
 
 <div align="center">
-    <img width="50%" src="./assets/light_form_app2.png" />
-    <img width="50%" src="./assets/dark_form_app2.png " />
+    <img width="40%" src="./assets/light_form_app2.png" />
+    <img width="40%" src="./assets/dark_form_app2.png " />
 </div>
 
 ---
