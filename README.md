@@ -47,8 +47,31 @@ Uma aplicação para cadastrar orfanatos de São Bernardo do Campo (SP), para qu
 ## ⚙️ Funcionalidades
 
 - [x] Back-end;
+  - [x] Rotas;
+    - [x] Cadastro de orfanatos;
+    - [x] Listagem de orfanatos;
+    - [x] Detalhes de um orfanato;
+    - [x] Inserção de imagens no cadastro de orfanatos.
 - [x] Front-end;
-- [ ] Mobile;
+  - [x] Pagina Principal;
+  - [x] Pagina de Mapas;
+  - [x] Pagina para cadastro de orfanatos;
+  - [x] Pagina para detalhes de orfanatos.
+- [x] Mobile;
+  - [x] Tela com a localização dos orfanatos;
+  - [x] Tela para selecionar a posição do orfanato;
+  - [x] Tela de cadastro de orfanatos;
+  - [x] Tela de detalhes de orfanatos.
+
+### A milha extra...
+
+- [x] styled-components na inteface web;
+- [x] styled-components na interface mobile;
+- [x] troca de temas na web, e o tema é salvo no local storage;
+- [x] troca de temas no mobile, de acordo com as preferências do sistema;
+- [x] botão que redireciona para o whatsapp web/app (campo adicionado no back-end);
+- [x] tela Home para o app mobile;
+- [x] shimmer effect na tela de detalhes do mobile.
 
 ---
 
@@ -79,38 +102,38 @@ Uma aplicação para cadastrar orfanatos de São Bernardo do Campo (SP), para qu
 ### mobile
 
 <div align="center">
-    <img width="40%" src="./assets/light_home.png" />
-    <img width="40%" src="./assets/dark_home.png " />
+    <img width="30%" src="./assets/light_home.png" />
+    <img width="30%" src="./assets/dark_home.png " />
 </div>
 
 <div align="center">
-    <img width="40%" src="./assets/light_map_app.png" />
-    <img width="40%" src="./assets/dark_map_app.png " />
+    <img width="30%" src="./assets/light_map_app.png" />
+    <img width="30%" src="./assets/dark_map_app.png " />
 </div>
 
 <div align="center">
-    <img width="40%" src="./assets/light_details_1.png" />
-    <img width="40%" src="./assets/dark_details_1.png " />
+    <img width="30%" src="./assets/light_details_1.png" />
+    <img width="30%" src="./assets/dark_details_1.png " />
 </div>
 
 <div align="center">
-    <img width="40%" src="./assets/light_details_2.png" />
-    <img width="40%" src="./assets/dark_details_2.png " />
+    <img width="30%" src="./assets/light_details_2.png" />
+    <img width="30%" src="./assets/dark_details_2.png " />
 </div>
 
 <div align="center">
-    <img width="40%" src="./assets/light_choose_position.png" />
-    <img width="40%" src="./assets/dark_choose_position.png " />
+    <img width="30%" src="./assets/light_choose_position.png" />
+    <img width="30%" src="./assets/dark_choose_position.png " />
 </div>
 
 <div align="center">
-    <img width="40%" src="./assets/light_form_app1.png" />
-    <img width="40%" src="./assets/dark_form_app1.png " />
+    <img width="30%" src="./assets/light_form_app1.png" />
+    <img width="30%" src="./assets/dark_form_app1.png " />
 </div>
 
 <div align="center">
-    <img width="40%" src="./assets/light_form_app2.png" />
-    <img width="40%" src="./assets/dark_form_app2.png " />
+    <img width="30%" src="./assets/light_form_app2.png" />
+    <img width="30%" src="./assets/dark_form_app2.png " />
 </div>
 
 ---
