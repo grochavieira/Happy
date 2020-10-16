@@ -25,6 +25,7 @@ interface Orphanage {
   instructions: string;
   opening_hours: string;
   open_on_weekends: string;
+  whatsapp: string;
   images: Array<{
     url: string;
     id: number;
@@ -143,10 +144,14 @@ export default function Orphanage() {
               )}
             </OpenDetails>
 
-            {/* <ContactButton type="button" className="contact-button">
+            <ContactButton
+              target="blank"
+              href={`https://api.WhatsApp.com/send?phone=${orphanage.whatsapp}`}
+              className="contact-button"
+            >
               <FaWhatsapp size={20} color="#FFF" />
               Entrar em contato
-            </ContactButton> */}
+            </ContactButton>
           </OrphanageDetails>
         </Details>
       </main>

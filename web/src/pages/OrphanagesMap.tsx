@@ -8,7 +8,7 @@ import {
   Header,
   Footer,
   CreateOrphanage,
-} from "../styles/pages/orphanages";
+} from "../styles/pages/orphanages-map";
 import { ThemeContext } from "styled-components";
 
 import mapMarkerImg from "../images/map-marker.svg";
@@ -19,11 +19,6 @@ interface Orphanage {
   name: string;
   latitude: number;
   longitude: number;
-  // about: string;
-  // instructions: string;
-  // opening_hours: string;
-  // open_on_weekends: string;
-  // images: string[];
   id: number;
 }
 

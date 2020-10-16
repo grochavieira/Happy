@@ -133,7 +133,6 @@ export const OpenDetails = styled.div`
       props.theme.title === "light"
         ? "linear-gradient(149.97deg, #e6f7fb 8.13%, #ffffff 92.67%)"
         : "linear-gradient(149.97deg, #4f2c18 8.13%, #4f2c1840 92.67%)"};
-    /* border: 1px solid #b3dae2; */
     border: 1px solid ${(props) => `${props.theme.colors.primary}40`};
     color: ${(props) => props.theme.colors.text};
 
@@ -162,7 +161,6 @@ export const OpenDetails = styled.div`
         : "linear-gradient(154.16deg, #ff669d1A 7.85%, #ff669d40 91.03%)"};
     border: 1px solid
       ${(props) => (props.theme.title === "light" ? "#ffbcd4" : "#333")};
-    /* border: 1px solid ${(props) => props.theme.colors.borderColor}; */
     color: #ff669d;
 
     svg {
@@ -171,7 +169,8 @@ export const OpenDetails = styled.div`
   }
 `;
 
-export const ContactButton = styled.button`
+export const ContactButton = styled.a`
+  text-decoration: none;
   margin-top: 6.4rem;
 
   width: 100%;
