@@ -68,7 +68,7 @@ export default {
       instructions: Yup.string().required(),
       opening_hours: Yup.string().required(),
       open_on_weekends: Yup.boolean().required(),
-      whatsapp: Yup.string().required().min(9).max(12),
+      whatsapp: Yup.string().required().min(9).max(15),
       images: Yup.array(
         Yup.object().shape({
           path: Yup.string().required(),
