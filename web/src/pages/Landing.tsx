@@ -28,9 +28,9 @@ const Landing: React.FC<Props> = ({ toggleTheme }) => {
         <Main>
           <h1>Leve felicidade para o mundo</h1>
           <p>Visite orfanatos e mude o dia de muitas crianças.</p>
-          <Link to="/register">
+          {/* <Link to="/register">
             <RegisterButton>Cadastre-se</RegisterButton>
-          </Link>
+          </Link> */}
         </Main>
         <Location>
           <Switch
