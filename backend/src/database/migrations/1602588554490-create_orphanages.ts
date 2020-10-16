@@ -47,6 +47,10 @@ export class createOrphanages1602588554490 implements MigrationInterface {
             type: "boolean",
             default: false,
           },
+          {
+            name: "whatsapp",
+            type: "text",
+          },
         ],
       })
     );
