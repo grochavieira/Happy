@@ -1,15 +1,10 @@
 import multer from "multer";
-import path from "path";
 
-export default {
-  storage: multer.diskStorage({
-    destination: path.join(__dirname, "..", "..", "uploads"),
-    filename: (request, file, cb) => {
-      const filename = `${Date.now()}-${file.originalname
-        .split(" ")
-        .join("-")}`;
+const upload = multer({
+  storage: multer.memoryStorage(),
+  limits: {
+    fileSize: 10 * 1024 * 1024,
+  },
+});
 
-      cb(null, filename);
-    },
-  }),
-};
+export default upload;

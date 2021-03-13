@@ -2,6 +2,8 @@ import { Request, Response } from "express";
 import { getRepository } from "typeorm";
 import Orphanage from "../models/Orphanage";
 import orphanageView from "../views/orphanages_view";
+import cloudinaryUpload from "../utils/cloudinaryUpload";
+import imageToDataURI from "../utils/imageToDataURI";
 import * as Yup from "yup";
 
 export default {
@@ -41,12 +43,15 @@ export default {
 
     const orphanagesRepository = getRepository(Orphanage);
 
-    // instrui o código para dizer que é um vetor de arquivos
     const requestImages = request.files as Express.Multer.File[];
 
-    const images = requestImages.map((image) => {
-      return { path: image.filename };
-    });
+    const images = await Promise.all(
+      requestImages.map(async (image) => {
+        const imageData = imageToDataURI(image);
+        const response = cloudinaryUpload(imageData);
+        return response;
+      })
+    );
 
     const data = {
       name,
@@ -71,7 +76,8 @@ export default {
       whatsapp: Yup.string().required().min(9).max(15),
       images: Yup.array(
         Yup.object().shape({
-          path: Yup.string().required(),
+          public_id: Yup.string().required(),
+          url: Yup.string().required(),
         })
       ),
     });
@@ -85,5 +91,12 @@ export default {
     await orphanagesRepository.save(orphanage);
 
     return response.status(201).json(orphanage);
+  },
+
+  async images(request: Request, response: Response) {
+    const images = request.files;
+    console.log(images);
+
+    return response.json(images);
   },
 };
