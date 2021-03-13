@@ -1,10 +1,10 @@
 <p align="center">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/grochavieira/Happy?color=%2304D361&style=for-the-badge">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/grochavieira/happy?color=%2304D361&style=for-the-badge">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/grochavieira/Happy?style=for-the-badge">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/grochavieira/happy?style=for-the-badge">
   
-  <a href="https://github.com/grochavieira/Happy/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/grochavieira/Happy?style=for-the-badge">
+  <a href="https://github.com/grochavieira/happy/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/grochavieira/happy?style=for-the-badge">
   </a>
     
    <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen?style=for-the-badge">
@@ -160,10 +160,10 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 ```bash
 
 # Clone este repositório
-$ git clone https://github.com/grochavieira/Happy.git
+$ git clone https://github.com/grochavieira/happy.git
 
 # Acesse a pasta do projeto no terminal/cmd
-$ cd Happy
+$ cd happy
 
 # Vá para a pasta backend
 $ cd backend
@@ -186,10 +186,10 @@ $ npm run dev
 ```bash
 
 # Clone este repositório
-$ git clone https://github.com/grochavieira/Happy.git
+$ git clone https://github.com/grochavieira/happy.git
 
 # Acesse a pasta do projeto no seu terminal/cmd
-$ cd Happy
+$ cd happy
 
 # Vá para a pasta da aplicação Front End
 $ cd web
@@ -209,10 +209,10 @@ $ yarn start
 ```bash
 
 # Clone este repositório
-$ git clone https://github.com/grochavieira/Happy.git
+$ git clone https://github.com/grochavieira/happy.git
 
 # Acesse a pasta do projeto no seu terminal/cmd
-$ cd Happy
+$ cd happy
 
 # Vá para a pasta da aplicação Mobile
 $ cd mobile
@@ -241,7 +241,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - **[Axios](https://github.com/axios/axios)**
 - **[Styled Components](https://styled-components.com/)**
 
-> Veja o arquivo [package.json](https://github.com/grochavieira/Happy/blob/master/web/package.json)
+> Veja o arquivo [package.json](https://github.com/grochavieira/happy/blob/master/web/package.json)
 
 #### **Server** ([NodeJS](https://nodejs.org/en/) + [TypeScript](https://www.typescriptlang.org/))
 
@@ -253,7 +253,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - **[Multer](https://github.com/expressjs/multer)**
 - **[Yup](https://github.com/jquense/yup)**
 
-> Veja o arquivo [package.json](https://github.com/grochavieira/Happy/blob/master/backend/package.json)
+> Veja o arquivo [package.json](https://github.com/grochavieira/happy/blob/master/backend/package.json)
 
 #### **Mobile** ([React Native](https://reactnative.dev/) + [TypeScript](https://www.typescriptlang.org/))
 
@@ -263,7 +263,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - **[React Navigation](https://reactnavigation.org/)**
 - **[Expo Google Fonts](https://github.com/expo/google-fonts)**
 
-> Veja o arquivo [package.json](https://github.com/grochavieira/Happy/blob/master/mobile/package.json)
+> Veja o arquivo [package.json](https://github.com/grochavieira/happy/blob/master/mobile/package.json)
 
 #### **Utilitários**
 
