@@ -44,11 +44,11 @@ export default function Orphanage() {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   useEffect(() => {
-    async function loadOrphanages() {
+    async function loadOrphanage() {
       const { data } = await api.get(`/orphanages/${params.id}`);
       setOrphanage(data);
     }
-    loadOrphanages();
+    loadOrphanage();
   }, [params.id]);
 
   if (!orphanage) {

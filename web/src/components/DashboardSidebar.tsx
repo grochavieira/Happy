@@ -11,18 +11,35 @@ import {
   Footer,
 } from "../styles/components/dashboard-sidebar";
 
-export default function DashboardSidebar() {
+interface DashboardSidebarProps {
+  showAcceptedOrphanages: boolean;
+  setShowAcceptedOrphanages: (value: boolean) => void;
+}
+
+export default function DashboardSidebar({
+  showAcceptedOrphanages,
+  setShowAcceptedOrphanages,
+}: DashboardSidebarProps) {
   const { goBack } = useHistory();
+  console.log(showAcceptedOrphanages);
 
   return (
     <Container>
       <img src={mapMarkerImg} alt="Happy" />
 
       <Main>
-        <button className="highlight" type="button" onClick={goBack}>
+        <button
+          onClick={() => setShowAcceptedOrphanages(true)}
+          className={showAcceptedOrphanages ? "highlight" : ""}
+          type="button"
+        >
           <FiMapPin size={24} />
         </button>
-        <button type="button" onClick={goBack}>
+        <button
+          className={!showAcceptedOrphanages ? "highlight" : ""}
+          onClick={() => setShowAcceptedOrphanages(false)}
+          type="button"
+        >
           <FiInfo size={24} />
         </button>
       </Main>

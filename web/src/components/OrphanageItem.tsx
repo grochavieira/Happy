@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { FiEdit3, FiTrash } from "react-icons/fi";
+import { FiEdit3, FiTrash, FiArrowRight } from "react-icons/fi";
 import { Map, Marker, TileLayer } from "react-leaflet";
 import { ThemeContext } from "styled-components";
 import { Container, Footer } from "../styles/components/orphanage-item";
@@ -9,9 +9,13 @@ import { Link } from "react-router-dom";
 
 interface OrphanageItemProps {
   orphanage: Orphanage;
+  showAcceptedOrphanages: boolean;
 }
 
-export default function OrphanageItem({ orphanage }: OrphanageItemProps) {
+export default function OrphanageItem({
+  orphanage,
+  showAcceptedOrphanages,
+}: OrphanageItemProps) {
   const { title } = useContext(ThemeContext);
   return (
     <>
@@ -39,12 +43,20 @@ export default function OrphanageItem({ orphanage }: OrphanageItemProps) {
         <Footer>
           <strong>{orphanage.name}</strong>
           <div>
-            <Link to={`/edit/${orphanage.id}`}>
-              <FiEdit3 />
-            </Link>
-            <Link to={`/edit/${orphanage.id}`}>
-              <FiTrash />
-            </Link>
+            {showAcceptedOrphanages ? (
+              <>
+                <Link to={`/edit/${orphanage.id}`}>
+                  <FiEdit3 />
+                </Link>
+                <Link to={`/edit/${orphanage.id}`}>
+                  <FiTrash />
+                </Link>
+              </>
+            ) : (
+              <Link to={`/edit/${orphanage.id}`}>
+                <FiArrowRight />
+              </Link>
+            )}
           </div>
         </Footer>
       </Container>

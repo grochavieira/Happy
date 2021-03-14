@@ -77,8 +77,7 @@ export default function CreateOrphanage() {
       open_on_weekends,
     });
 
-    alert("Cadastro realizado com sucesso!");
-    history.push("/app");
+    history.push("/success");
   }
 
   function handleSelectImages(event: ChangeEvent<HTMLInputElement>) {
