@@ -77,13 +77,12 @@ export const RegisterButton = styled.div`
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 30rem;
-  height: 8rem;
-  background: ${(props) => props.theme.colors.secondary};
+  padding: 2rem 6rem;
+  background: ${(props) => props.theme.colors.green};
   border-radius: 3rem;
 
-  color: rgba(0, 0, 0, 0.6);
-  font-size: 3rem;
+  color: #fff;
+  font-size: 2.5rem;
   font-weight: 700;
 
   display: flex;
@@ -94,8 +93,7 @@ export const RegisterButton = styled.div`
   transition: background-color 0.2s;
 
   &:hover {
-    background: ${(props) =>
-      props.theme.title === "dark" ? `#fff` : " #96feff"};
+    opacity: 0.8;
   }
 `;
 

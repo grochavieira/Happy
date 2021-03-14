@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { InputBlock } from "../global";
 
 export const Container = styled.div`
   display: flex;
@@ -22,66 +23,6 @@ export const Fieldset = styled.fieldset`
     border-bottom: 1px solid ${(props) => props.theme.colors.borderColor};
     margin-bottom: 4rem;
     padding-bottom: 2.4rem;
-  }
-`;
-
-export const InputBlock = styled.div`
-  label {
-    display: flex;
-    color: ${(props) => props.theme.colors.text};
-    margin-bottom: 0.8rem;
-    line-height: 2.4rem;
-
-    span {
-      font-size: 1.4rem;
-      color: ${(props) => props.theme.colors.title};
-      margin-left: 2.4rem;
-      line-height: 2.4rem;
-    }
-  }
-
-  input,
-  textarea {
-    width: 100%;
-    background: ${(props) => props.theme.colors.inputBackground};
-    border: 1px solid ${(props) => props.theme.colors.borderColor};
-    border-radius: 2rem;
-    outline: none;
-    color: ${(props) => props.theme.colors.title};
-  }
-
-  input {
-    height: 6.4rem;
-    padding: 0 1.6rem;
-  }
-
-  textarea {
-    min-height: 12rem;
-    max-height: 24rem;
-    resize: vertical;
-    padding: 1.6rem;
-    line-height: 2.8rem;
-  }
-
-  .new-image {
-    height: 9.6rem;
-    background: ${(props) => props.theme.colors.inputBackground};
-    border: 1px dashed ${(props) => props.theme.colors.tertiaryLight};
-    border-radius: 2rem;
-    cursor: pointer;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    svg {
-      color: ${(props) => props.theme.colors.tertiaryLight};
-    }
-  }
-
-  input[type="file"] {
-    visibility: hidden;
-    opacity: 0;
   }
 `;
 
@@ -178,32 +119,5 @@ export const ImagePreview = styled.div`
     svg {
       color: #ff669d;
     }
-  }
-`;
-
-export const ConfirmButton = styled.button`
-  margin-top: 6.4rem;
-
-  width: 100%;
-  height: 6.4rem;
-  border: 0;
-  cursor: pointer;
-  background: ${(props) => props.theme.colors.tertiary};
-  border-radius: 2rem;
-  color: #ffffff;
-  font-weight: 800;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  transition: background-color 0.2s;
-
-  svg {
-    margin-right: 1.6rem;
-  }
-
-  :hover {
-    background: ${(props) => props.theme.colors.tertiaryDark};
   }
 `;

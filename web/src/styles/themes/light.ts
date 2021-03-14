@@ -16,5 +16,6 @@ export default {
     formBackground: "#fff",
     inputBackground: "#f5f8fa",
     borderColor: "#d3e2e5",
+    green: "#12d4e0",
   },
 };

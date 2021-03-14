@@ -21,6 +21,7 @@ declare module "styled-components" {
       formBackground: string;
       inputBackground: string;
       borderColor: string;
+      green: string;
     };
   }
 }

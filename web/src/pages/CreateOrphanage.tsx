@@ -13,12 +13,11 @@ import {
   Container,
   Form,
   Fieldset,
-  InputBlock,
   ButtonSelect,
-  ConfirmButton,
   ImagesContainer,
   ImagePreview,
 } from "../styles/pages/create-orphanage";
+import { InputBlock, ConfirmButton } from "../styles/global";
 
 interface Image {
   url: string;
