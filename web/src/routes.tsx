@@ -9,6 +9,7 @@ import Login from "./pages/Login";
 import ForgotPassword from "./pages/ForgotPassword";
 import PasswordReset from "./pages/PasswordReset";
 import Dashboard from "./pages/Dashboards";
+import EditOrphanage from "./pages/EditOrphanage";
 
 interface Props {
   toggleTheme: () => void;
@@ -30,6 +31,7 @@ const Routes: React.FC<Props> = ({ toggleTheme }) => {
         <Route exact path="/forgot-password" component={ForgotPassword} />
         <Route exact path="/password-reset" component={PasswordReset} />
         <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/edit/:id" component={EditOrphanage} />
       </Switch>
     </BrowserRouter>
   );

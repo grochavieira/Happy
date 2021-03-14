@@ -18,6 +18,7 @@ import Sidebar from "../components/Sidebar";
 import api from "../services/api";
 
 export interface Orphanage {
+  id: number;
   name: string;
   latitude: number;
   longitude: number;
@@ -32,7 +33,7 @@ export interface Orphanage {
   }>;
 }
 
-interface OrphanageParams {
+export interface OrphanageParams {
   id: string;
 }
 

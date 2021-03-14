@@ -5,6 +5,7 @@ import { ThemeContext } from "styled-components";
 import { Container, Footer } from "../styles/components/orphanage-item";
 import { Orphanage } from "../pages/Orphanage";
 import mapIcon from "../utils/mapIcon";
+import { Link } from "react-router-dom";
 
 interface OrphanageItemProps {
   orphanage: Orphanage;
@@ -38,12 +39,12 @@ export default function OrphanageItem({ orphanage }: OrphanageItemProps) {
         <Footer>
           <strong>{orphanage.name}</strong>
           <div>
-            <button>
+            <Link to={`/edit/${orphanage.id}`}>
               <FiEdit3 />
-            </button>
-            <button>
+            </Link>
+            <Link to={`/edit/${orphanage.id}`}>
               <FiTrash />
-            </button>
+            </Link>
           </div>
         </Footer>
       </Container>

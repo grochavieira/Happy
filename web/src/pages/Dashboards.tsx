@@ -33,7 +33,7 @@ export default function Dashboard() {
         </Header>
         <OrphanagesContainer>
           {orphanages.map((orphanage) => (
-            <OrphanageItem orphanage={orphanage} />
+            <OrphanageItem key={orphanage.id} orphanage={orphanage} />
           ))}
         </OrphanagesContainer>
         {orphanages.length === 0 ? (

@@ -34,12 +34,13 @@ export const Footer = styled.footer`
 
     margin-left: 2rem;
 
-    button {
+    a {
       display: flex;
       justify-content: center;
       border: 0;
       padding: 1.2rem;
       border-radius: 13px;
+      background-color: ${(props) => props.theme.colors.background};
 
       svg {
         color: ${(props) => props.theme.colors.green};
@@ -53,7 +54,7 @@ export const Footer = styled.footer`
       }
     }
 
-    button + button {
+    a + a {
       margin-left: 1rem;
     }
   }

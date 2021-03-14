@@ -121,3 +121,49 @@ export const ImagePreview = styled.div`
     }
   }
 `;
+
+export const AcceptContainer = styled.div`
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+
+  button {
+    margin-top: 4.4rem;
+
+    width: 100%;
+    height: 6.4rem;
+    border: 0;
+    cursor: pointer;
+    background: ${(props) => props.theme.colors.tertiary};
+    border-radius: 2rem;
+    color: #ffffff;
+    font-weight: 800;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 0.2s;
+
+    svg {
+      margin-right: 1.6rem;
+    }
+
+    &:first-child {
+      background-color: #ff669d;
+    }
+
+    :hover {
+      filter: brightness(0.8);
+    }
+
+    :active {
+      transform: scale(0.9);
+    }
+
+    & + button {
+      margin-left: 2rem;
+    }
+  }
+`;

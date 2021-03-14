@@ -9,7 +9,7 @@ export default function Login() {
   const history = useHistory();
 
   function handleLogin() {
-    history.push("/");
+    history.push("/dashboard");
   }
 
   return (
