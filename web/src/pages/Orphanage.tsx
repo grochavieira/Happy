@@ -17,7 +17,7 @@ import {
 import Sidebar from "../components/Sidebar";
 import api from "../services/api";
 
-interface Orphanage {
+export interface Orphanage {
   name: string;
   latitude: number;
   longitude: number;
@@ -102,7 +102,7 @@ export default function Orphanage() {
                 <Marker
                   interactive={false}
                   icon={mapIcon}
-                  position={[-27.2092052, -49.6401092]}
+                  position={[orphanage.latitude, orphanage.longitude]}
                 />
               </Map>
 

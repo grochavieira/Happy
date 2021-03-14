@@ -18,9 +18,7 @@ export const Container = styled.aside`
   img {
     width: 4.8rem;
   }
-`;
 
-export const Footer = styled.footer`
   a,
   button {
     width: 4.8rem;
@@ -33,15 +31,38 @@ export const Footer = styled.footer`
 
     cursor: pointer;
 
-    transition: background-color 0.2s;
+    transition: all 0.2s;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &.highlight {
+      background-color: ${(props) => props.theme.colors.secondary};
+    }
+
+    &.highlight svg {
+      color: ${(props) => props.theme.colors.primaryDark};
+    }
   }
 
   a:hover,
   button:hover {
-    background: ${(props) => props.theme.colors.primaryDark};
+    filter: brightness(0.8);
+  }
+
+  svg {
+    color: #fff;
   }
 `;
+
+export const Main = styled.main`
+  display: flex;
+  flex-direction: column;
+
+  button + button {
+    margin-top: 1.5rem;
+  }
+`;
+
+export const Footer = styled.footer``;

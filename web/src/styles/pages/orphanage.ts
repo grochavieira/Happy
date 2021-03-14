@@ -72,11 +72,18 @@ export const OrphanageDetails = styled.div`
     margin-top: 2.4rem;
   }
 
-  & .map-container {
+  .leaflet-container {
+    border-bottom: 1px solid ${(props) => props.theme.colors.borderColor};
+    border-radius: 2rem;
+    overflow: hidden;
+  }
+
+  .map-container {
     margin-top: 6.4rem;
     background: ${(props) => `${props.theme.colors.tertiaryLight}1A`};
     border: 1px solid ${(props) => props.theme.colors.borderColor};
     border-radius: 2rem;
+    overflow: hidden;
 
     footer {
       padding: 2rem 0;
@@ -86,11 +93,6 @@ export const OrphanageDetails = styled.div`
         line-height: 2.4rem;
         color: ${(props) => props.theme.colors.tertiaryLight};
         text-decoration: none;
-
-        & .leaflet-container {
-          border-bottom: 1px solid ${(props) => props.theme.colors.borderColor};
-          border-radius: 2rem;
-        }
       }
     }
   }

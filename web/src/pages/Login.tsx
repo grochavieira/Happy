@@ -1,38 +1,32 @@
 import React from "react";
-import { FiArrowLeft } from "react-icons/fi";
-import {
-  Container,
-  PanelSection,
-  LoginSection,
-  GoBack,
-  RememberContainer,
-} from "../styles/pages/login";
-import { InputBlock, ConfirmButton, Fieldset } from "../styles/global";
-
-import logoImg from "../images/panel_logo.svg";
+import { Link, useHistory } from "react-router-dom";
+import { Container, RememberContainer } from "../styles/pages/login";
+import { InputBlock, ConfirmButton, Fieldset, Form } from "../styles/global";
+import Panel from "../components/Panel";
+import GoBack from "../components/GoBack";
 
 export default function Login() {
+  const history = useHistory();
+
+  function handleLogin() {
+    history.push("/");
+  }
+
   return (
     <>
-      <GoBack>
-        <FiArrowLeft size={24} />
-      </GoBack>
+      <GoBack />
       <Container>
-        <PanelSection>
-          <img src={logoImg} alt="Happy" />
-          <strong>São Paulo</strong>
-          <span>São Bernardo do Campo</span>
-        </PanelSection>
-        <LoginSection>
+        <Panel />
+        <Form>
           <Fieldset>
             <legend>Fazer Login</legend>
             <InputBlock>
-              <label htmlFor="instructions">E-mail</label>
-              <input type="text" id="instructions" />
+              <label htmlFor="email">E-mail</label>
+              <input type="text" id="email" />
             </InputBlock>
             <InputBlock>
-              <label htmlFor="instructions">Senha</label>
-              <input type="text" id="instructions" />
+              <label htmlFor="password">Senha</label>
+              <input type="password" id="password" />
             </InputBlock>
           </Fieldset>
           <RememberContainer>
@@ -40,10 +34,12 @@ export default function Login() {
               <input type="checkbox" name="remember" id="remember" />
               <label htmlFor="remember"> Lembrar-me</label>
             </span>
-            <p>Esqueci minha senha</p>
+            <p>
+              <Link to="forgot-password"> Esqueci minha senha </Link>{" "}
+            </p>
           </RememberContainer>
-          <ConfirmButton>Entrar</ConfirmButton>
-        </LoginSection>
+          <ConfirmButton onClick={handleLogin}>Entrar</ConfirmButton>
+        </Form>
       </Container>
     </>
   );

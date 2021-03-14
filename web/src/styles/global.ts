@@ -19,6 +19,11 @@ export default createGlobalStyle`
     body, input, button, textarea {
         font: 600 1.8rem Nunito, sans-serif;
     }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 `;
 
 export const InputBlock = styled.div`
@@ -122,4 +127,14 @@ export const Fieldset = styled.div`
     margin-bottom: 1.5rem;
     padding-bottom: 2.4rem;
   }
+`;
+
+export const Form = styled.div`
+  width: 45%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  margin: 0 8rem;
 `;
