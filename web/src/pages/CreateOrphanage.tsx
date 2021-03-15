@@ -7,6 +7,7 @@ import Sidebar from "../components/Sidebar";
 import mapIcon from "../utils/mapIcon";
 import { ThemeContext } from "styled-components";
 import { useHistory } from "react-router-dom";
+import { toast } from "react-toastify";
 import api from "../services/api";
 
 import {
@@ -49,36 +50,41 @@ export default function CreateOrphanage() {
   async function handleSubmit(event: FormEvent) {
     event.preventDefault();
 
-    const { latitude, longitude } = position;
+    try {
+      const { latitude, longitude } = position;
 
-    const data = new FormData();
+      const data = new FormData();
 
-    data.append("name", name);
-    data.append("about", about);
-    data.append("latitude", String(latitude));
-    data.append("longitude", String(longitude));
-    data.append("instructions", instructions);
-    data.append("opening_hours", opening_hours);
-    data.append("open_on_weekends", String(open_on_weekends));
-    data.append("whatsapp", whatsapp);
+      data.append("name", name);
+      data.append("about", about);
+      data.append("latitude", String(latitude));
+      data.append("longitude", String(longitude));
+      data.append("instructions", instructions);
+      data.append("opening_hours", opening_hours);
+      data.append("open_on_weekends", String(open_on_weekends));
+      data.append("whatsapp", whatsapp);
 
-    images.forEach((image) => {
-      data.append("images", image);
-    });
+      images.forEach((image) => {
+        data.append("images", image);
+      });
 
-    await api.post("orphanages", data);
+      await api.post("orphanages", data);
 
-    console.log({
-      name,
-      about,
-      instructions,
-      opening_hours,
-      latitude,
-      longitude,
-      open_on_weekends,
-    });
+      console.log({
+        name,
+        about,
+        instructions,
+        opening_hours,
+        latitude,
+        longitude,
+        open_on_weekends,
+      });
 
-    history.push("/success");
+      toast.success("Orfanato cadastrado com sucesso!");
+      history.push("/success");
+    } catch (error) {
+      toast.error("Não foi possível realizar o cadastro!");
+    }
   }
 
   function handleSelectImages(event: ChangeEvent<HTMLInputElement>) {

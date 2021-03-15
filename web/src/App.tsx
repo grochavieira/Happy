@@ -3,6 +3,7 @@ import { ThemeProvider, DefaultTheme } from "styled-components";
 import light from "./styles/themes/light";
 import dark from "./styles/themes/dark";
 import GlobalStyle from "./styles/global";
+import { ToastContainer } from "react-toastify";
 import usePersistedState from "./utils/usePersistedState";
 
 import Routes from "./routes";
@@ -20,6 +21,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Routes toggleTheme={toggleTheme} />
+        <ToastContainer />
       </ThemeProvider>
     </>
   );

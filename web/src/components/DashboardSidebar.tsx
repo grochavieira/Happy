@@ -10,6 +10,7 @@ import {
   Main,
   Footer,
 } from "../styles/components/dashboard-sidebar";
+import { toast } from "react-toastify";
 
 interface DashboardSidebarProps {
   showAcceptedOrphanages: boolean;
@@ -21,6 +22,11 @@ export default function DashboardSidebar({
   setShowAcceptedOrphanages,
 }: DashboardSidebarProps) {
   const history = useHistory();
+
+  function handleLogout() {
+    toast.success("Logout do sistema com sucesso!");
+    history.push("/");
+  }
 
   return (
     <Container>
@@ -44,12 +50,7 @@ export default function DashboardSidebar({
       </Main>
 
       <Footer>
-        <button
-          type="button"
-          onClick={() => {
-            history.push("/");
-          }}
-        >
+        <button type="button" onClick={handleLogout}>
           <AiOutlinePoweroff size={24} color="#FFF" />
         </button>
       </Footer>

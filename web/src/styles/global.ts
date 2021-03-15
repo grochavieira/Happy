@@ -1,3 +1,4 @@
+import "react-toastify/dist/ReactToastify.css";
 import styled, { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
@@ -23,6 +24,20 @@ export default createGlobalStyle`
     a {
       color: inherit;
       text-decoration: none;
+    }
+
+    .Toastify__toast {
+      border-radius: 10px;
+    }
+
+    .Toastify__toast--error {
+      background-color: #ff3366;
+    }
+    .Toastify__toast--success {
+      background-color: rgb(0, 149, 247);
+    }
+    .Toastify__toast--warning {
+      background-color: ${(props) => props.theme.colors.secondary}
     }
 `;
 

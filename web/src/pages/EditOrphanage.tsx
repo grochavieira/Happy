@@ -14,6 +14,7 @@ import Sidebar from "../components/Sidebar";
 import mapIcon from "../utils/mapIcon";
 import { ThemeContext } from "styled-components";
 import { useHistory, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import api from "../services/api";
 
 import {
@@ -84,46 +85,56 @@ export default function CreateOrphanage() {
   async function handleSubmit(event: FormEvent) {
     event.preventDefault();
 
-    const { latitude, longitude } = position;
+    try {
+      const { latitude, longitude } = position;
 
-    const data = new FormData();
+      const data = new FormData();
 
-    data.append("id", String(id));
-    data.append("name", name);
-    data.append("about", about);
-    data.append("latitude", String(latitude));
-    data.append("longitude", String(longitude));
-    data.append("instructions", instructions);
-    data.append("opening_hours", opening_hours);
-    data.append("open_on_weekends", String(open_on_weekends));
-    data.append("whatsapp", whatsapp);
-    data.append("savedImages", JSON.stringify(savedImages));
-    data.append("is_accepted", String(true));
+      data.append("id", String(id));
+      data.append("name", name);
+      data.append("about", about);
+      data.append("latitude", String(latitude));
+      data.append("longitude", String(longitude));
+      data.append("instructions", instructions);
+      data.append("opening_hours", opening_hours);
+      data.append("open_on_weekends", String(open_on_weekends));
+      data.append("whatsapp", whatsapp);
+      data.append("savedImages", JSON.stringify(savedImages));
+      data.append("is_accepted", String(true));
 
-    images.forEach((image) => {
-      data.append("images", image);
-    });
+      images.forEach((image) => {
+        data.append("images", image);
+      });
 
-    await api.put("orphanages", data);
+      await api.put("orphanages", data);
 
-    console.log({
-      name,
-      about,
-      instructions,
-      opening_hours,
-      latitude,
-      longitude,
-      open_on_weekends,
-    });
+      console.log({
+        name,
+        about,
+        instructions,
+        opening_hours,
+        latitude,
+        longitude,
+        open_on_weekends,
+      });
 
-    history.push("/dashboard");
+      toast.success("Pedido aceito com sucesso!");
+      history.push("/dashboard");
+    } catch (error) {
+      toast.error("Não foi possível aceitar o pedido!");
+    }
   }
 
   async function handleReject() {
-    await api.delete(`/orphanages/${params.id}`);
+    try {
+      await api.delete(`/orphanages/${params.id}`);
 
-    alert("Pedido rejeitado com sucesso!");
-    history.push("/dashboard");
+      toast.success("Pedido rejeitado com sucesso!");
+
+      history.push("/dashboard");
+    } catch (error) {
+      toast.error("Não foi possível rejeitar o pedido!");
+    }
   }
 
   function handleSelectImages(event: ChangeEvent<HTMLInputElement>) {

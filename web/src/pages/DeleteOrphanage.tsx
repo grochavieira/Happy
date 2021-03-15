@@ -5,6 +5,7 @@ import { FiTrash } from "react-icons/fi";
 import deleteImg from "../images/exclude.svg";
 import { Orphanage, OrphanageParams } from "./Orphanage";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import api from "../services/api";
 
 export default function SuccessfulRegistration() {
@@ -21,10 +22,14 @@ export default function SuccessfulRegistration() {
   }, [params.id]);
 
   const handleOrphanageDelete = async () => {
-    const response = await api.delete(`/orphanages/${params.id}`);
-    console.log(response);
-    alert("Orfanato excluído com sucesso");
-    history.push("/dashboard");
+    try {
+      const response = await api.delete(`/orphanages/${params.id}`);
+      console.log(response);
+      toast.success("Orfanato excluído com sucesso");
+      history.push("/dashboard");
+    } catch (error) {
+      toast.error("Não foi possível deletar o orfanato!");
+    }
   };
 
   if (!orphanage) {

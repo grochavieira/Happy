@@ -48,7 +48,7 @@ export default {
 
     await usersRepository.save(user);
 
-    return response.status(201).json(user);
+    return response.status(201).json(userView.render(user));
   },
 
   async login(request: Request, response: Response) {
@@ -58,13 +58,12 @@ export default {
 
     const user = await usersRepository.findOne({ email });
 
-    if (!user)
-      return response.status(400).json({ message: "usuário não existe" });
+    if (!user) return response.json({ error: "usuário não existe" });
 
     const isPasswordCorrect = await bcryptjs.compare(password, user.password);
-    console.log(isPasswordCorrect);
-    if (isPasswordCorrect) return response.json(userView.render(user));
+    if (isPasswordCorrect)
+      return response.status(201).json(userView.render(user));
 
-    return response.status(400).json({ message: "senha incorreta" });
+    return response.json({ error: "senha incorreta" });
   },
 };
