@@ -20,8 +20,7 @@ export default function DashboardSidebar({
   showAcceptedOrphanages,
   setShowAcceptedOrphanages,
 }: DashboardSidebarProps) {
-  const { goBack } = useHistory();
-  console.log(showAcceptedOrphanages);
+  const history = useHistory();
 
   return (
     <Container>
@@ -45,7 +44,12 @@ export default function DashboardSidebar({
       </Main>
 
       <Footer>
-        <button type="button" onClick={goBack}>
+        <button
+          type="button"
+          onClick={() => {
+            history.push("/");
+          }}
+        >
           <AiOutlinePoweroff size={24} color="#FFF" />
         </button>
       </Footer>

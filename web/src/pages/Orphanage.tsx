@@ -27,6 +27,7 @@ export interface Orphanage {
   opening_hours: string;
   open_on_weekends: string;
   whatsapp: string;
+  is_accepted: boolean;
   images: Array<{
     url: string;
     id: number;

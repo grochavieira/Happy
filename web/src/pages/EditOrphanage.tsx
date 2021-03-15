@@ -38,12 +38,15 @@ export default function CreateOrphanage() {
   const params = useParams<OrphanageParams>();
   const { title } = useContext(ThemeContext);
   const [position, setPosition] = useState({ latitude: 0, longitude: 0 });
+  const [id, setId] = useState(0);
   const [name, setName] = useState("");
   const [about, setAbout] = useState("");
   const [instructions, setInstructions] = useState("");
   const [opening_hours, setOpeningHours] = useState("");
   const [open_on_weekends, setOpenOnWeekends] = useState(true);
+  const [whatsapp, setWhatsapp] = useState("");
   const [images, setImages] = useState<File[]>([]);
+  const [savedImages, setSavedImages] = useState<Image[]>([]);
   const [previewImages, setPreviewImages] = useState<Image[]>([]);
   const [is_accepted, setIsAccepted] = useState(false);
 
@@ -51,6 +54,7 @@ export default function CreateOrphanage() {
     async function loadOrphanages() {
       const { data: orphanage } = await api.get(`/orphanages/${params.id}`);
 
+      setId(orphanage.id);
       setName(orphanage.name);
       setAbout(orphanage.about);
       setInstructions(orphanage.instructions);
@@ -60,10 +64,13 @@ export default function CreateOrphanage() {
       });
       setOpeningHours(orphanage.opening_hours);
       setOpenOnWeekends(orphanage.open_on_weekends);
+      setWhatsapp(orphanage.whatsapp);
+      setSavedImages(orphanage.images);
       setPreviewImages(orphanage.images);
+      setIsAccepted(orphanage.is_accepted);
     }
     loadOrphanages();
-  }, [params.id]);
+  }, [is_accepted, params.id]);
 
   function handleMapClick(event: LeafletMouseEvent) {
     const { lat: latitude, lng: longitude } = event.latlng;
@@ -74,7 +81,50 @@ export default function CreateOrphanage() {
     });
   }
 
-  async function handleSubmit(event: FormEvent) {}
+  async function handleSubmit(event: FormEvent) {
+    event.preventDefault();
+
+    const { latitude, longitude } = position;
+
+    const data = new FormData();
+
+    data.append("id", String(id));
+    data.append("name", name);
+    data.append("about", about);
+    data.append("latitude", String(latitude));
+    data.append("longitude", String(longitude));
+    data.append("instructions", instructions);
+    data.append("opening_hours", opening_hours);
+    data.append("open_on_weekends", String(open_on_weekends));
+    data.append("whatsapp", whatsapp);
+    data.append("savedImages", JSON.stringify(savedImages));
+    data.append("is_accepted", String(true));
+
+    images.forEach((image) => {
+      data.append("images", image);
+    });
+
+    await api.put("orphanages", data);
+
+    console.log({
+      name,
+      about,
+      instructions,
+      opening_hours,
+      latitude,
+      longitude,
+      open_on_weekends,
+    });
+
+    history.push("/dashboard");
+  }
+
+  async function handleReject() {
+    await api.delete(`/orphanages/${params.id}`);
+
+    alert("Pedido rejeitado com sucesso!");
+    history.push("/dashboard");
+  }
 
   function handleSelectImages(event: ChangeEvent<HTMLInputElement>) {
     if (!event.target.files) return;
@@ -106,6 +156,12 @@ export default function CreateOrphanage() {
       (previewImage) => previewImage.url !== image.url
     );
 
+    console.log("---> SAVED IMAGES");
+    const newSavedImages = savedImages.filter(
+      (savedImage) => savedImage.url !== image.url
+    );
+    console.log(newSavedImages);
+    setSavedImages(newSavedImages);
     setPreviewImages(newPreviewImages);
     setImages(newImages);
   }
@@ -211,6 +267,15 @@ export default function CreateOrphanage() {
             </InputBlock>
 
             <InputBlock>
+              <label htmlFor="whatsapp">Whatsapp</label>
+              <input
+                value={whatsapp}
+                onChange={(e) => setWhatsapp(e.target.value)}
+                id="whatsapp"
+              />
+            </InputBlock>
+
+            <InputBlock>
               <label htmlFor="open_on_weekends">Atende fim de semana</label>
 
               <ButtonSelect>
@@ -236,10 +301,10 @@ export default function CreateOrphanage() {
             <ConfirmButton type="submit">Confirmar</ConfirmButton>
           ) : (
             <AcceptContainer>
-              <button type="button">
+              <button onClick={handleReject} type="button">
                 <ImCancelCircle /> Recusar
               </button>
-              <button type="button">
+              <button onClick={handleSubmit} type="button">
                 <FiCheck /> Aceitar
               </button>
             </AcceptContainer>

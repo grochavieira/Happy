@@ -18,7 +18,10 @@ export default class Image {
   @Column()
   url: string;
 
-  @ManyToOne(() => Orphanage, (orphanage) => orphanage.images)
+  @ManyToOne((type) => Orphanage, (orphanage) => orphanage.images, {
+    onUpdate: "CASCADE",
+    onDelete: "CASCADE",
+  })
   @JoinColumn({ name: "orphanage_id" })
   orphanage: Orphanage;
 }

@@ -71,6 +71,10 @@ export const Location = styled.div`
     margin-top: 0.5rem;
     font-weight: 800;
   }
+
+  svg {
+    cursor: pointer;
+  }
 `;
 
 export const RegisterButton = styled.div`

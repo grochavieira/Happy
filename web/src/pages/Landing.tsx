@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { FiArrowRight } from "react-icons/fi";
+import { FiArrowRight, FiSun, FiMoon } from "react-icons/fi";
 import {
   Container,
   Content,
@@ -33,17 +33,11 @@ const Landing: React.FC<Props> = ({ toggleTheme }) => {
           </Link>
         </Main>
         <Location>
-          <Switch
-            onChange={toggleTheme}
-            checked={title === "light"}
-            checkedIcon={false}
-            uncheckedIcon={false}
-            height={10}
-            width={40}
-            handleDiameter={20}
-            offColor="#00C7C7"
-            onColor="#1C110A"
-          />
+          {title === "light" ? (
+            <FiSun color="#FFD666" onClick={() => toggleTheme()} size={30} />
+          ) : (
+            <FiMoon color="#00C7C7" onClick={() => toggleTheme()} size={30} />
+          )}
           <strong>São Paulo</strong>
           <span>São Bernardo do Campo</span>
         </Location>

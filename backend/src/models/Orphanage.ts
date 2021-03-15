@@ -34,11 +34,12 @@ export default class Orphanage {
   open_on_weekends: boolean;
 
   @Column()
+  is_accepted: boolean;
+
+  @Column()
   whatsapp: string;
 
-  @OneToMany(() => Image, (image) => image.orphanage, {
-    cascade: ["insert", "update"],
-  }) // tipo de retorno, qual o campo do objeto que retorna o relacionamento inverso, e o cadastro automático das images
+  @OneToMany(() => Image, (image) => image.orphanage, { cascade: true }) // tipo de retorno, qual o campo do objeto que retorna o relacionamento inverso, e o cadastro automático das images
   @JoinColumn({ name: "orphanage_id" }) // nome da coluna que armazena o relacionamento
   images: Image[];
 }

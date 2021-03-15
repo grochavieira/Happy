@@ -19,8 +19,12 @@ export default function Dashboard() {
   useEffect(() => {
     async function getOrphanages() {
       const { data } = await api.get("/orphanages");
-      setAcceptedOrphanages(data);
-      // setPendingOrphanages(data);
+      setAcceptedOrphanages(
+        data.filter((orphanage: Orphanage) => orphanage.is_accepted)
+      );
+      setPendingOrphanages(
+        data.filter((orphanage: Orphanage) => !orphanage.is_accepted)
+      );
     }
 
     getOrphanages();

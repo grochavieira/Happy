@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { FiPlus, FiArrowRight } from "react-icons/fi";
+import { Link, useHistory } from "react-router-dom";
+import { FiPlus, FiArrowRight, FiArrowLeft } from "react-icons/fi";
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 import {
   Container,
@@ -23,11 +23,12 @@ interface Orphanage {
 }
 
 function OrphanagesMap() {
+  const history = useHistory();
   const { title } = useContext(ThemeContext);
   const [orphanages, setOrphanages] = useState<Orphanage[]>([]);
   useEffect(() => {
     async function loadOrphanages() {
-      const { data } = await api.get("/orphanages");
+      const { data } = await api.get("/orphanages/accepted");
       setOrphanages(data);
     }
     loadOrphanages();
@@ -47,6 +48,10 @@ function OrphanagesMap() {
           <strong>São Paulo</strong>
           <span>São Bernado do Campo</span>
         </Footer>
+
+        <button onClick={() => history.push("/")}>
+          <FiArrowLeft />
+        </button>
       </Aside>
 
       <Map

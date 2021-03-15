@@ -57,11 +57,34 @@ export const Aside = styled.aside`
     ${(props) => props.theme.colors.primary} 0%,
     ${(props) => props.theme.colors.primaryLight} 100%
   );
-  padding: 8rem;
+  padding: 8rem 8rem 4rem 8rem;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  button {
+    margin-top: -5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 5rem;
+    border: 0;
+
+    padding: 1.5rem;
+    border-radius: 15px;
+
+    color: ${(props) => props.theme.colors.gradientText};
+    background-color: ${(props) => props.theme.colors.primaryDark};
+
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
 `;
 
 export const Header = styled.header`
@@ -83,6 +106,8 @@ export const Footer = styled.footer`
   flex-direction: column;
 
   line-height: 2.4rem;
+
+  margin-top: 5rem;
 
   strong {
     font-weight: 800;

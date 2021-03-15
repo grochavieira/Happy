@@ -48,7 +48,7 @@ export default function OrphanageItem({
                 <Link to={`/edit/${orphanage.id}`}>
                   <FiEdit3 />
                 </Link>
-                <Link to={`/edit/${orphanage.id}`}>
+                <Link to={`/delete/${orphanage.id}`}>
                   <FiTrash />
                 </Link>
               </>

@@ -20,7 +20,12 @@ export default function SuccessfulRegistration() {
     loadOrphanage();
   }, [params.id]);
 
-  const handleOrphanageDelete = async () => {};
+  const handleOrphanageDelete = async () => {
+    const response = await api.delete(`/orphanages/${params.id}`);
+    console.log(response);
+    alert("Orfanato excluído com sucesso");
+    history.push("/dashboard");
+  };
 
   if (!orphanage) {
     return <p>Carregando...</p>;
