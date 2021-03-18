@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FiMapPin, FiInfo } from "react-icons/fi";
 import { AiOutlinePoweroff } from "react-icons/ai";
 import { useHistory } from "react-router-dom";
@@ -11,6 +11,7 @@ import {
   Footer,
 } from "../styles/components/dashboard-sidebar";
 import { toast } from "react-toastify";
+import AuthContext from "../contexts/auth";
 
 interface DashboardSidebarProps {
   showAcceptedOrphanages: boolean;
@@ -21,9 +22,11 @@ export default function DashboardSidebar({
   showAcceptedOrphanages,
   setShowAcceptedOrphanages,
 }: DashboardSidebarProps) {
+  const { signOut } = useContext(AuthContext);
   const history = useHistory();
 
   function handleLogout() {
+    signOut();
     toast.success("Logout do sistema com sucesso!");
     history.push("/");
   }

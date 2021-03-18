@@ -1,28 +1,23 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { Container, RememberContainer } from "../styles/pages/login";
 import { InputBlock, ConfirmButton, Fieldset, Form } from "../styles/global";
 import { toast } from "react-toastify";
 import Panel from "../components/Panel";
 import GoBack from "../components/GoBack";
+import AuthContext from "../contexts/auth";
 import api from "../services/api";
 
 export default function Login() {
+  const { signIn, signed } = useContext(AuthContext);
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  console.log(signed);
+
   async function handleLogin() {
-    console.log("Entrou");
-    console.log({ email, password });
-    const { data } = await api.post("/users/login", { email, password });
-    console.log(data);
-    if (data.error) {
-      toast.warn(data.error);
-    } else {
-      toast.success("Login efetuado com sucesso!");
-      history.push("/dashboard");
-    }
+    signIn({ email, password });
   }
 
   return (

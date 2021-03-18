@@ -5,6 +5,7 @@ import dark from "./styles/themes/dark";
 import GlobalStyle from "./styles/global";
 import { ToastContainer } from "react-toastify";
 import usePersistedState from "./utils/usePersistedState";
+import { AuthProvider } from "./contexts/auth";
 
 import Routes from "./routes";
 import "leaflet/dist/leaflet.css";
@@ -18,11 +19,13 @@ function App() {
 
   return (
     <>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Routes toggleTheme={toggleTheme} />
-        <ToastContainer />
-      </ThemeProvider>
+      <AuthProvider>
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+          <Routes toggleTheme={toggleTheme} />
+          <ToastContainer />
+        </ThemeProvider>
+      </AuthProvider>
     </>
   );
 }

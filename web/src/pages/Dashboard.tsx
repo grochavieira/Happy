@@ -10,7 +10,6 @@ import OrphanageItem from "../components/OrphanageItem";
 import { Orphanage } from "./Orphanage";
 import noOrphanagesImg from "../images/no-orphanages.svg";
 import api from "../services/api";
-import { toast } from "react-toastify";
 
 export default function Dashboard() {
   const [acceptedOrphanages, setAcceptedOrphanages] = useState<Orphanage[]>([]);

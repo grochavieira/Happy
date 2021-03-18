@@ -8,11 +8,11 @@ import {
   Enter,
   RegisterButton,
 } from "../styles/pages/landing";
-import Switch from "react-switch";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "styled-components";
 
 import logoImg from "../images/logo.svg";
+import AuthContext from "../contexts/auth";
 
 interface Props {
   toggleTheme: () => void;
