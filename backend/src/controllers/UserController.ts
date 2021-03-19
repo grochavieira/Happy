@@ -64,7 +64,7 @@ export default {
     const user = await usersRepository.findOne({ email });
 
     if (!user) {
-      return response.json({ error: "usuário com este email não existe!" });
+      return response.json({ error: "não existe usuário com este email!" });
     }
 
     const token = crypto.randomBytes(20).toString("hex");
@@ -102,7 +102,7 @@ export default {
     const mailOptions = {
       from: "Admnistrador do Happy <grochavieira.dev@gmail.com>",
       to: email,
-      subject: "Email de teste",
+      subject: "Resetar Senha - Happy",
       template: "index",
       context: { token, host: process.env.APP_HOST },
     };
@@ -110,7 +110,7 @@ export default {
     transporter
       .sendMail(mailOptions)
       .then(() => {
-        return response.json({ success: "email enviado" });
+        return response.json({ success: "email enviado!" });
       })
       .catch((err) => {
         console.log(err);
@@ -125,7 +125,7 @@ export default {
     const user = await usersRepository.findOne({ email });
 
     if (!user) {
-      return response.json({ error: "usuário com este email não existe!" });
+      return response.json({ error: "não existe usuário com este email!" });
     }
 
     if (user.password_reset_token && user.password_reset_token === token) {
@@ -133,9 +133,8 @@ export default {
         password: await bcryptjs.hash(password, 8),
       });
 
-      return response.json(newUser);
-    } else {
-      return response.json({ error: "token inválido" });
+      return response.json({ success: "senha trocada com sucesso!" });
     }
+    return response.json({ error: "token inválido" });
   },
 };

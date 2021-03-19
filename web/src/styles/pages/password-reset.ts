@@ -17,7 +17,7 @@ export const Container = styled.div`
   }
 `;
 
-export const InputBlock = styled.div`
+export const InputPasswordBlock = styled.div`
   label {
     display: flex;
     color: ${(props) => props.theme.colors.text};
