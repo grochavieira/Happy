@@ -5,14 +5,4 @@ export const Container = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: row;
-
-  p {
-    color: ${(props) => props.theme.colors.text};
-    margin-top: -2rem;
-    margin-bottom: 3rem;
-  }
-
-  button {
-    margin-top: 2.5rem;
-  }
 `;

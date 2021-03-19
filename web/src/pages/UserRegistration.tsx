@@ -1,34 +1,33 @@
 import React, { useState } from "react";
-import Panel from "../components/Panel";
-import GoBack from "../components/GoBack";
-import { FiEye, FiEyeOff } from "react-icons/fi";
 import { useHistory } from "react-router-dom";
-import { Container } from "../styles/pages/password-reset";
+import { FiEye, FiEyeOff } from "react-icons/fi";
+import { Container } from "../styles/pages/user-registration";
 import {
-  Form,
+  InputBlock,
   ConfirmButton,
   Fieldset,
-  InputBlock,
+  Form,
   InputPasswordBlock,
 } from "../styles/global";
-import api from "../services/api";
+import Panel from "../components/Panel";
+import GoBack from "../components/GoBack";
 import { toast } from "react-toastify";
+import api from "../services/api";
 
-export default function ForgotPassword() {
+export default function UserRegistration() {
   const history = useHistory();
-
   const [showNewPassword, setShowNewPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [token, setToken] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const handleResetPassword = async () => {
+  async function handleUserRegistration() {
     if (password.length >= 6) {
       if (password === confirmPassword) {
-        const { data } = await api.post("/password-reset", {
-          token,
+        const { data } = await api.post("/users", {
+          name,
           email,
           password,
         });
@@ -45,7 +44,7 @@ export default function ForgotPassword() {
     } else {
       toast.warn("senha precisa ter no mínimo 6 carácteres!");
     }
-  };
+  }
 
   return (
     <>
@@ -54,17 +53,14 @@ export default function ForgotPassword() {
         <Panel />
         <Form>
           <Fieldset>
-            <legend>Redefinição de senha</legend>
-            <p>
-              Escolha uma nova senha para você acessar o dashboard do Happy.
-            </p>
+            <legend>Cadastro de Usuário</legend>
             <InputBlock>
-              <label htmlFor="email">Token</label>
+              <label htmlFor="name">Nome</label>
               <input
-                onChange={(e) => setToken(e.target.value)}
-                value={token}
+                onChange={(e) => setName(e.target.value)}
+                value={name}
                 type="text"
-                id="email"
+                id="name"
               />
             </InputBlock>
             <InputBlock>
@@ -122,8 +118,11 @@ export default function ForgotPassword() {
                 )}
               </div>
             </InputPasswordBlock>
-            <ConfirmButton onClick={handleResetPassword}>Entrar</ConfirmButton>
           </Fieldset>
+
+          <ConfirmButton onClick={handleUserRegistration}>
+            Cadastrar
+          </ConfirmButton>
         </Form>
       </Container>
     </>

@@ -9,6 +9,7 @@ import Login from "../pages/Login";
 import ForgotPassword from "../pages/ForgotPassword";
 import PasswordReset from "../pages/PasswordReset";
 import SuccessfulRegistration from "../pages/SuccessfulRegistration";
+import UserRegistration from "../pages/UserRegistration";
 
 interface AuthRoutesProps {
   toggleTheme: () => void;
@@ -26,6 +27,7 @@ const AppRoutes: React.FC<AuthRoutesProps> = ({ toggleTheme }) => {
         <Route exact path="/app" component={OrphanagesMap} />
         <Route exact path="/orphanages/create" component={CreateOrphanage} />
         <Route exact path="/orphanages/:id" component={Orphanage} />
+        <Route exact path="/user-registration" component={UserRegistration} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/forgot-password" component={ForgotPassword} />
         <Route exact path="/password-reset" component={PasswordReset} />

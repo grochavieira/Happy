@@ -32,6 +32,12 @@ export default {
 
     const usersRepository = getRepository(User);
 
+    const userExist = await usersRepository.findOne({ email });
+
+    if (userExist) {
+      return response.json({ error: "usuário com este email já existe!" });
+    }
+
     const data = {
       name,
       email,
@@ -54,7 +60,25 @@ export default {
 
     await usersRepository.save(user);
 
-    return response.status(201).json(userView.render(user));
+    return response
+      .status(201)
+      .json({ success: "usuário cadastrado com sucesso!" });
+  },
+
+  async delete(request: Request, response: Response) {
+    const { id } = request.params;
+
+    const usersRepository = getRepository(User);
+
+    const user = await usersRepository.findOneOrFail(id);
+
+    if (user) {
+      const response = await usersRepository.delete(id);
+    }
+
+    return response
+      .status(201)
+      .json({ success: "usuário deletado com sucesso!" });
   },
 
   async forgotPassword(request: Request, response: Response) {

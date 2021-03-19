@@ -24,6 +24,7 @@ routes.get("/users", UserController.index);
 routes.get("/users/:id", UserController.show);
 routes.post("/forgot-password", UserController.forgotPassword);
 routes.post("/password-reset", UserController.resetPassword);
+routes.delete("/users/:id", UserController.delete);
 
 routes.post("/tokens", TokenController.store);
 

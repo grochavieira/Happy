@@ -22,7 +22,7 @@ export default function ForgotPassword() {
 
   return (
     <>
-      <GoBack />
+      <GoBack route="/login" />
       <Container>
         <Panel />
         <Form>

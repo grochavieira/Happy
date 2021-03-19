@@ -1,17 +1,25 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { Container, RememberContainer } from "../styles/pages/login";
-import { InputBlock, ConfirmButton, Fieldset, Form } from "../styles/global";
+import {
+  InputBlock,
+  ConfirmButton,
+  Fieldset,
+  Form,
+  InputPasswordBlock,
+} from "../styles/global";
 import Panel from "../components/Panel";
 import GoBack from "../components/GoBack";
 import AuthContext from "../contexts/auth";
 import crypto from "crypto-js";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 
 export default function Login() {
-  const { signIn, signed } = useContext(AuthContext);
   const history = useHistory();
+  const { signIn, signed } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [isLoginSaved, setIsLoginSaved] = useState(false);
   console.log(signed);
 
@@ -61,7 +69,7 @@ export default function Login() {
 
   return (
     <>
-      <GoBack />
+      <GoBack route="/" />
       <Container>
         <Panel />
         <Form>
@@ -76,15 +84,29 @@ export default function Login() {
                 id="email"
               />
             </InputBlock>
-            <InputBlock>
+            <InputPasswordBlock>
               <label htmlFor="password">Senha</label>
-              <input
-                onChange={(e) => setPassword(e.target.value)}
-                value={password}
-                type="password"
-                id="password"
-              />
-            </InputBlock>
+              <div>
+                <input
+                  type={showPassword ? "text" : "password"}
+                  id="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                {showPassword ? (
+                  <FiEyeOff
+                    onClick={() => setShowPassword(!showPassword)}
+                    size={20}
+                    color="#15C3D6"
+                  />
+                ) : (
+                  <FiEye
+                    onClick={() => setShowPassword(!showPassword)}
+                    size={20}
+                  />
+                )}
+              </div>
+            </InputPasswordBlock>
           </Fieldset>
           <RememberContainer>
             <span>
@@ -102,6 +124,12 @@ export default function Login() {
             </p>
           </RememberContainer>
           <ConfirmButton onClick={handleLogin}>Entrar</ConfirmButton>
+          <strong
+            onClick={() => history.push("/user-registration")}
+            className="register"
+          >
+            Sem Cadastro?
+          </strong>
         </Form>
       </Container>
     </>

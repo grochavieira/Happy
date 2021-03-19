@@ -22,7 +22,7 @@ export default {
 
     if (!user) {
       return response.json({
-        error: "suário não existe",
+        error: "usuário não existe",
       });
     }
 

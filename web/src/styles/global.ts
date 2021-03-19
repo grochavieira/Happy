@@ -132,6 +132,50 @@ export const ConfirmButton = styled.button`
   }
 `;
 
+export const InputPasswordBlock = styled.div`
+  label {
+    display: flex;
+    color: ${(props) => props.theme.colors.text};
+    margin-bottom: 0.8rem;
+    line-height: 2.4rem;
+
+    span {
+      font-size: 1.4rem;
+      color: ${(props) => props.theme.colors.title};
+      margin-left: 2.4rem;
+      line-height: 2.4rem;
+    }
+  }
+
+  div {
+    position: relative;
+    display: flex;
+  }
+
+  div input {
+    width: 100%;
+
+    background: ${(props) => props.theme.colors.inputBackground};
+    border: 1px solid ${(props) => props.theme.colors.borderColor};
+    border-radius: 2rem;
+    outline: none;
+    color: ${(props) => props.theme.colors.title};
+  }
+
+  input {
+    height: 6.4rem;
+    padding: 0 1.6rem;
+  }
+
+  svg {
+    position: absolute;
+    top: 33%;
+    right: 2rem;
+    color: ${(props) => props.theme.colors.text};
+    cursor: pointer;
+  }
+`;
+
 export const Fieldset = styled.div`
   legend {
     font-size: 3.2rem;
@@ -152,4 +196,20 @@ export const Form = styled.div`
   justify-content: center;
 
   margin: 0 8rem;
+
+  strong.register {
+    display: flex;
+    align-self: center;
+
+    margin-top: 3rem;
+    font-size: 2rem;
+
+    color: ${(props) => props.theme.colors.text};
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
 `;

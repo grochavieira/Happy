@@ -3,11 +3,15 @@ import { Container } from "../styles/components/go-back";
 import { FiArrowLeft } from "react-icons/fi";
 import { useHistory } from "react-router-dom";
 
-export default function GoBack() {
-  const { goBack } = useHistory();
+interface GoBackProps {
+  route: string;
+}
+
+export default function GoBack({ route }: GoBackProps) {
+  const history = useHistory();
   return (
     <>
-      <Container onClick={goBack}>
+      <Container onClick={() => history.push(`${route}`)}>
         <FiArrowLeft size={24} />
       </Container>
     </>
