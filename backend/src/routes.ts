@@ -19,9 +19,11 @@ routes.put(
 );
 routes.delete("/orphanages/:id", loginRequired, OrphanagesController.delete);
 
-// routes.post("/users",  UserController.create);
-// routes.get("/users", loginRequired, UserController.index);
+routes.post("/users", UserController.create);
+routes.get("/users", UserController.index);
 routes.get("/users/:id", UserController.show);
+routes.post("/forgot-password", UserController.forgotPassword);
+routes.post("/password-reset", UserController.resetPassword);
 
 routes.post("/tokens", TokenController.store);
 

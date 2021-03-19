@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@types/jsonwebtoken": "^8.5.1",
+    "@types/nodemailer": "^6.4.1",
     "bcryptjs": "^2.4.3",
     "cloudinary": "^1.25.0",
     "cors": "^2.8.5",
@@ -22,6 +23,9 @@
     "image-data-uri": "^2.0.1",
     "jsonwebtoken": "^8.5.1",
     "multer": "^1.4.2",
+    "nodemailer": "^6.5.0",
+    "nodemailer-express-handlebars": "^4.0.0",
+    "nodemailer-handlebars": "^1.0.1",
     "sqlite3": "^5.0.0",
     "typeorm": "^0.2.28",
     "yup": "^0.29.3"
