@@ -119,7 +119,7 @@ export default function CreateOrphanage() {
       });
 
       toast.success("Pedido aceito com sucesso!");
-      history.push("/dashboard");
+      history.push("/");
     } catch (error) {
       toast.error("Não foi possível aceitar o pedido!");
     }
@@ -131,7 +131,7 @@ export default function CreateOrphanage() {
 
       toast.success("Pedido rejeitado com sucesso!");
 
-      history.push("/dashboard");
+      history.push("/");
     } catch (error) {
       toast.error("Não foi possível rejeitar o pedido!");
     }

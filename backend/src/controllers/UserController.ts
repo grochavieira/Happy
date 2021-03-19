@@ -50,20 +50,4 @@ export default {
 
     return response.status(201).json(userView.render(user));
   },
-
-  async login(request: Request, response: Response) {
-    const { email, password } = request.body;
-
-    const usersRepository = getRepository(User);
-
-    const user = await usersRepository.findOne({ email });
-
-    if (!user) return response.json({ error: "usuário não existe" });
-
-    const isPasswordCorrect = await bcryptjs.compare(password, user.password);
-    if (isPasswordCorrect)
-      return response.status(201).json(userView.render(user));
-
-    return response.json({ error: "senha incorreta" });
-  },
 };

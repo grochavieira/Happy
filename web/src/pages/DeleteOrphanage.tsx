@@ -26,7 +26,7 @@ export default function SuccessfulRegistration() {
       const response = await api.delete(`/orphanages/${params.id}`);
       console.log(response);
       toast.success("Orfanato excluído com sucesso");
-      history.push("/dashboard");
+      history.push("/");
     } catch (error) {
       toast.error("Não foi possível deletar o orfanato!");
     }
