@@ -12,25 +12,16 @@ import * as Yup from "yup";
 
 export default {
   async index(request: Request, response: Response) {
-    const orphanagesRepository = getRepository(Orphanage);
-
-    const orphanages = await orphanagesRepository.find({
-      relations: ["images"],
-    });
-
-    return response.json(orphanageView.renderMany(orphanages));
-  },
-
-  async accepted(request: Request, response: Response) {
+    const { accepted } = request.query;
     const orphanagesRepository = getRepository(Orphanage);
 
     let orphanages = await orphanagesRepository.find({
       relations: ["images"],
     });
 
-    orphanages.filter((orphanage) => orphanage.is_accepted);
-
-    orphanages.filter((orphanage) => orphanage.is_accepted);
+    if (accepted) {
+      orphanages = orphanages.filter((orphanage) => orphanage.is_accepted);
+    }
 
     return response.json(orphanageView.renderMany(orphanages));
   },

@@ -35,6 +35,7 @@ export default {
     const userExist = await usersRepository.findOne({ email });
 
     if (userExist) {
+      console.log(userExist);
       return response.json({ error: "usuário com este email já existe!" });
     }
 

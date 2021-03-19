@@ -32,7 +32,7 @@ function OrphanagesMap() {
   const [orphanages, setOrphanages] = useState<Orphanage[]>([]);
   useEffect(() => {
     async function loadOrphanages() {
-      const { data } = await api.get("/orphanages/accepted");
+      const { data } = await api.get("/orphanages?accepted=true");
       setOrphanages(data);
     }
 

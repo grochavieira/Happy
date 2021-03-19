@@ -8,6 +8,8 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
 
+  border-right: 3px solid ${(props) => props.theme.colors.text};
+
   background: linear-gradient(
     329.54deg,
     ${(props) => props.theme.colors.primary} 0%,

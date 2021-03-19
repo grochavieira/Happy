@@ -16,7 +16,7 @@ import api from "../services/api";
 
 export default function UserRegistration() {
   const history = useHistory();
-  const [showNewPassword, setShowNewPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -32,11 +32,13 @@ export default function UserRegistration() {
           password,
         });
 
+        console.log(data.error);
+
         if (data.success) {
           toast.success(data.success);
           history.push("/login");
         } else if (data.error) {
-          toast.warn(data.success);
+          toast.warn(data.error);
         }
       } else {
         toast.warn("as senhas não batem!");
@@ -73,23 +75,23 @@ export default function UserRegistration() {
               />
             </InputBlock>
             <InputPasswordBlock>
-              <label htmlFor="new-password">Nova Senha</label>
+              <label htmlFor="password">Senha</label>
               <div>
                 <input
-                  type={showNewPassword ? "text" : "password"}
-                  id="new-password"
+                  type={showPassword ? "text" : "password"}
+                  id="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
-                {showNewPassword ? (
+                {showPassword ? (
                   <FiEyeOff
-                    onClick={() => setShowNewPassword(!showNewPassword)}
+                    onClick={() => setShowPassword(!showPassword)}
                     size={20}
                     color="#15C3D6"
                   />
                 ) : (
                   <FiEye
-                    onClick={() => setShowNewPassword(!showNewPassword)}
+                    onClick={() => setShowPassword(!showPassword)}
                     size={20}
                   />
                 )}

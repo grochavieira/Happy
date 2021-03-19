@@ -1,4 +1,10 @@
-import React, { ChangeEvent, FormEvent, useContext, useState } from "react";
+import React, {
+  ChangeEvent,
+  FormEvent,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import { Map, Marker, TileLayer } from "react-leaflet";
 import { LeafletMouseEvent } from "leaflet";
 import { FiPlus } from "react-icons/fi";
@@ -28,6 +34,10 @@ interface Image {
 export default function CreateOrphanage() {
   const history = useHistory();
   const { title } = useContext(ThemeContext);
+  const [userLocation, setUserLocation] = useState({
+    latitude: -20.7104846,
+    longitude: -46.5521557,
+  });
   const [position, setPosition] = useState({ latitude: 0, longitude: 0 });
   const [name, setName] = useState("");
   const [about, setAbout] = useState("");
@@ -37,6 +47,24 @@ export default function CreateOrphanage() {
   const [whatsapp, setWhatsapp] = useState("");
   const [images, setImages] = useState<File[]>([]);
   const [previewImages, setPreviewImages] = useState<Image[]>([]);
+
+  useEffect(() => {
+    async function getUserLocation() {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          setUserLocation({ latitude, longitude });
+        },
+        (err) => {
+          console.log(err);
+        },
+        {
+          timeout: 30000,
+        }
+      );
+    }
+    getUserLocation();
+  }, []);
 
   function handleMapClick(event: LeafletMouseEvent) {
     const { lat: latitude, lng: longitude } = event.latlng;
@@ -95,7 +123,6 @@ export default function CreateOrphanage() {
     setImages([...images, ...selectedImages]);
 
     const selectedImagesPreview = selectedImages.map((image) => {
-      console.log(image);
       return { url: URL.createObjectURL(image), name: image.name };
     });
 
@@ -103,16 +130,10 @@ export default function CreateOrphanage() {
   }
 
   function handleDeleteImages(image: any) {
-    console.log(image);
-
-    console.log("---> IMAGES");
     const newImages = images.filter(
       (savedImage) => savedImage.name !== image.name
     );
 
-    console.log(newImages);
-
-    console.log("---> PREVIEW IMAGES");
     const newPreviewImages = previewImages.filter(
       (previewImage) => previewImage.url !== image.url
     );
@@ -132,7 +153,7 @@ export default function CreateOrphanage() {
 
             <Map
               onClick={handleMapClick}
-              center={[-23.6853128, -46.5691204]}
+              center={[userLocation.latitude, userLocation.longitude]}
               style={{ width: "100%", height: 280 }}
               zoom={15}
             >
