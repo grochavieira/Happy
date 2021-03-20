@@ -38,7 +38,7 @@
 
 ## 💻 Sobre o projeto
 
-Uma aplicação para cadastrar orfanatos de São Bernardo do Campo (SP), para que usuários possam encontrar informações sobre eles.
+Uma aplicativo para cadastrar orfanatos de São Bernardo do Campo (SP), para que usuários possam encontrar informações sobre eles.
 
 ---
 
@@ -78,14 +78,12 @@ Uma aplicação para cadastrar orfanatos de São Bernardo do Campo (SP), para qu
     <img width="30%" src="./assets/dark_map_app.png " />
 </div>
 
-### Detalhes - 1
+### Detalhes
 
 <div align="center">
     <img width="30%" src="./assets/light_details_1.png" />
     <img width="30%" src="./assets/dark_details_1.png " />
 </div>
-
-### Detalhes - 2
 
 <div align="center">
     <img width="30%" src="./assets/light_details_2.png" />
@@ -99,14 +97,12 @@ Uma aplicação para cadastrar orfanatos de São Bernardo do Campo (SP), para qu
     <img width="30%" src="./assets/dark_choose_position.png " />
 </div>
 
-### Formulário - 1
+### Formulário de Cadastro de Orfanato
 
 <div align="center">
     <img width="30%" src="./assets/light_form_app1.png" />
     <img width="30%" src="./assets/dark_form_app1.png " />
 </div>
-
-### Formulário - 2
 
 <div align="center">
     <img width="30%" src="./assets/light_form_app2.png" />
