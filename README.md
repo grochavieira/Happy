@@ -172,8 +172,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
  <sub><strong>🌟 Guilherme Rocha Vieira 🌟</strong></sub>
 </p>
 
-[![Linkedin Badge](https://img.shields.io/badge/-Guilherme-blue?style=flat&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/grochavieira/)](https://www.linkedin.com/in/grochavieira/)
-[![Gmail Badge](https://img.shields.io/badge/-guirocha.hopeisaba@gmail.com-c14438?style=flat&logo=Gmail&logoColor=white&link=mailto:guirocha.hopeisaba@gmail.com)](mailto:guirocha.hopeisaba@gmail.com)
+[![Linkedin Badge](https://img.shields.io/badge/-linkedin-blue?style=flat&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/grochavieira/)](https://www.linkedin.com/in/grochavieira/)
 
 ---
 
