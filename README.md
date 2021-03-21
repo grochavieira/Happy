@@ -1,18 +1,13 @@
 <p align="center">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/grochavieira/happy-mobile?color=%2304D361&style=for-the-badge">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/grochavieira/happy-mobile?color=%2304D361&style=flat">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/grochavieira/happy-mobile?style=for-the-badge">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/grochavieira/happy-mobile?style=flat">
   
   <a href="https://github.com/grochavieira/happy-mobile/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/grochavieira/happy-mobile?style=for-the-badge">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/grochavieira/happy-mobile?style=flat">
   </a>
     
-   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen?style=for-the-badge">
-
-  <a href="https://github.com/grochavieira">
-    <img alt="Feito por Guilherme Rocha Vieira" src="https://img.shields.io/badge/feito%20por-grochavieira-%237519C1?style=for-the-badge&logo=github">
-  </a>
-  
+   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen?style=flat">
  
 </p>
 <h1 align="center">
@@ -154,7 +149,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - **[React Navigation](https://reactnavigation.org/)**
 - **[Expo Google Fonts](https://github.com/expo/google-fonts)**
 
-> Veja o arquivo [package.json](https://github.com/grochavieira/happy/blob/master/mobile/package.json)
+> Veja o arquivo [package.json](https://github.com/grochavieira/happy-mobile/blob/master/package.json)
 
 #### **Utilitários**
 
