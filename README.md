@@ -165,9 +165,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 ## 🦸‍♂️ **Autor**
 
 <p>
-<kbd>
- <img class="border circle" src="https://avatars1.githubusercontent.com/u/48029638?s=460&u=f8d11a7aa9ce76a782ef140a075c5c81be878f00&v=4" width="150px;" alt="grochavieira"/>
- </kbd>
+ <img src="https://avatars1.githubusercontent.com/u/48029638?s=460&u=f8d11a7aa9ce76a782ef140a075c5c81be878f00&v=4" width="150px;" alt="grochavieira"/>
  <br />
  <sub><strong>🌟 Guilherme Rocha Vieira 🌟</strong></sub>
 </p>
