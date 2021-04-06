@@ -15,7 +15,7 @@
 </h1>
 
 <h4 align="center"> 
-	🚧  Aplicação em desenvolvimento - 2.0! 🚧
+	🚧  Aplicação em desenvolvimento - versão 2.0! 🚧
 </h4>
 
 ## 🏁 Tópicos

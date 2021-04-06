@@ -20,6 +20,10 @@
     "ios": {
       "supportsTablet": true
     },
+    "android":{
+      "package": "com.grochavieira.happy",
+      "versionCode": 1
+    },
     "web": {
       "favicon": "./assets/favicon.png"
     }
