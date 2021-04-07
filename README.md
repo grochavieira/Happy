@@ -128,7 +128,7 @@ $ git clone https://github.com/grochavieira/happy-mobile.git
 $ cd happy-mobile
 
 # Instale as dependências
-$ yarn install
+$ yarn
 
 # Execute a aplicação em modo de desenvolvimento
 $ yarn start
