@@ -11,7 +11,7 @@
  
 </p>
 <h1 align="center">
-    <img src="./assets/logo_mobile.png" />
+    <img src="./.github/logo_mobile.png" />
 </h1>
 
 <h4 align="center"> 
@@ -62,46 +62,46 @@ Uma aplicativo para cadastrar orfanatos de São Bernardo do Campo (SP), para que
 ### Home
 
 <div align="center">
-    <img width="30%" src="./assets/light_home.png" />
-    <img width="30%" src="./assets/dark_home.png " />
+    <img width="30%" src="./.github/light_home.png" />
+    <img width="30%" src="./.github/dark_home.png " />
 </div>
 
 ### Mapa
 
 <div align="center">
-    <img width="30%" src="./assets/light_map_app.png" />
-    <img width="30%" src="./assets/dark_map_app.png " />
+    <img width="30%" src="./.github/light_map_app.png" />
+    <img width="30%" src="./.github/dark_map_app.png " />
 </div>
 
 ### Detalhes
 
 <div align="center">
-    <img width="30%" src="./assets/light_details_1.png" />
-    <img width="30%" src="./assets/dark_details_1.png " />
+    <img width="30%" src="./.github/light_details_1.png" />
+    <img width="30%" src="./.github/dark_details_1.png " />
 </div>
 
 <div align="center">
-    <img width="30%" src="./assets/light_details_2.png" />
-    <img width="30%" src="./assets/dark_details_2.png " />
+    <img width="30%" src="./.github/light_details_2.png" />
+    <img width="30%" src="./.github/dark_details_2.png " />
 </div>
 
 ### Escolha do Local do Orfanato
 
 <div align="center">
-    <img width="30%" src="./assets/light_choose_position.png" />
-    <img width="30%" src="./assets/dark_choose_position.png " />
+    <img width="30%" src="./.github/light_choose_position.png" />
+    <img width="30%" src="./.github/dark_choose_position.png " />
 </div>
 
 ### Formulário de Cadastro de Orfanato
 
 <div align="center">
-    <img width="30%" src="./assets/light_form_app1.png" />
-    <img width="30%" src="./assets/dark_form_app1.png " />
+    <img width="30%" src="./.github/light_form_app1.png" />
+    <img width="30%" src="./.github/dark_form_app1.png " />
 </div>
 
 <div align="center">
-    <img width="30%" src="./assets/light_form_app2.png" />
-    <img width="30%" src="./assets/dark_form_app2.png " />
+    <img width="30%" src="./.github/light_form_app2.png" />
+    <img width="30%" src="./.github/dark_form_app2.png " />
 </div>
 
 ---
