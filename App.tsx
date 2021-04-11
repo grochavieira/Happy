@@ -14,7 +14,8 @@ import Routes from "./src/routes";
 
 export default function App() {
   const deviceTheme = useColorScheme();
-  const theme = themes[deviceTheme] || themes.dark;
+  // const theme = themes[deviceTheme] || themes.dark;
+  const theme = themes.light;
 
   console.log(deviceTheme);
 
