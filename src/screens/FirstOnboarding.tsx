@@ -6,7 +6,7 @@ import {
   Title,
   Description,
 } from "../styles/screens/FirstOnboarding";
-import Onboarding from "../images/Onboarding1.png";
+import Onboarding from "../images/Onboarding-1.png";
 
 export default function FirstOnboarding() {
   return (
