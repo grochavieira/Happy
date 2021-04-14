@@ -26,3 +26,39 @@ export const Description = styled.Text`
 `;
 
 export const ImageContainer = styled.Image``;
+
+export const Footer = styled.View`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+  padding: 0px 50px 0px 50px;
+`;
+
+export const CurrentOnboarding = styled.View`
+  display: flex;
+  flex-direction: row;
+`;
+
+export const ActiveOnboarding = styled.View`
+  width: 20px;
+  height: 5px;
+  border-radius: 10px;
+  background-color: ${(props) => props.theme.colors.secondary};
+`;
+
+export const InactiveOnboarding = styled.View`
+  width: 15px;
+  height: 5px;
+  border-radius: 10px;
+  margin-left: 5px;
+  background-color: ${(props) => props.theme.colors.text};
+`;
+
+export const GoForward = styled.TouchableOpacity`
+  background-color: ${(props) => `${props.theme.colors.primaryLight}33`};
+  padding: 20px;
+  border-radius: 20px;
+`;
