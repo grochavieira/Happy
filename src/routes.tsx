@@ -10,6 +10,7 @@ import SelectMapPosition from "./screens/CreateOrphanage/SelectMapPosition";
 import OrphanageData from "./screens/CreateOrphanage/OrphanageData";
 import Header from "./components/Header";
 import FirstOnboarding from "./screens/FirstOnboarding";
+import SecondOnboarding from "./screens/SecondOnboarding";
 const { Navigator, Screen } = createStackNavigator();
 
 export default function Routes() {
@@ -21,7 +22,8 @@ export default function Routes() {
           cardStyle: { backgroundColor: "#f2f3f5" },
         }}
       >
-        <Screen name="Home" component={FirstOnboarding} />
+        <Screen name="FirstOnboarding" component={FirstOnboarding} />
+        <Screen name="SecondOnboarding" component={SecondOnboarding} />
         <Screen name="OrphanagesMap" component={OrphanagesMap} />
         <Screen
           name="OrphanageDetails"

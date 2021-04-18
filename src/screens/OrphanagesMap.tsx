@@ -8,12 +8,7 @@ import {
   CreateOrphanage,
   Container,
 } from "../styles/screens/Map";
-import MapView, {
-  PROVIDER_GOOGLE,
-  Marker,
-  Callout,
-  MapEvent,
-} from "react-native-maps";
+import MapView, { PROVIDER_GOOGLE, Marker, Callout } from "react-native-maps";
 import { Feather } from "@expo/vector-icons";
 import { useNavigation, useFocusEffect } from "@react-navigation/native";
 import { ThemeContext } from "styled-components/native";

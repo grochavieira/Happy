@@ -1,25 +1,26 @@
 import React from "react";
-import { View } from "react-native";
+import { Image } from "react-native";
 import { Feather } from "@expo/vector-icons";
 
 import {
-  Container,
-  ImageContainer,
-  Title,
-  Description,
   GoForward,
   Footer,
   CurrentOnboarding,
   ActiveOnboarding,
   InactiveOnboarding,
-} from "../styles/screens/FirstOnboarding";
+} from "../styles/screens/Onboarding";
+import {
+  Container,
+  Title,
+  Description,
+} from "../styles/screens/Onboarding/FirstOnboarding";
 import Onboarding1 from "../images/Onboarding-1.png";
 
 export default function FirstOnboarding() {
   return (
     <>
       <Container>
-        <ImageContainer source={Onboarding1} />
+        <Image source={Onboarding1} />
         <Title>Leve felicidade para o mundo</Title>
         <Description>
           Visite orfanatos e mude o dia de muitas crianças.
