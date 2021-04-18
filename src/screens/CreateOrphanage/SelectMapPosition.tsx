@@ -6,6 +6,7 @@ import { ThemeContext } from "styled-components/native";
 
 import AddModal from "../../components/AddModal";
 import { useRegister } from "../../contexts/register";
+import { useAccess } from "../../contexts/access";
 import {
   Container,
   NextButton,
@@ -18,6 +19,7 @@ export default function SelectMapPosition() {
   const navigation = useNavigation();
   const { title } = useContext(ThemeContext);
   const { position, setPosition } = useRegister();
+  const { hasUsedMapSelection } = useAccess();
   const [isCursorActive, setIsCursorActive] = useState(true);
 
   function handleNextStep() {
@@ -32,7 +34,9 @@ export default function SelectMapPosition() {
 
   return (
     <>
-      {isCursorActive && <AddModal setIsCursorActive={setIsCursorActive} />}
+      {!hasUsedMapSelection && isCursorActive && (
+        <AddModal setIsCursorActive={setIsCursorActive} />
+      )}
       <Container>
         <MapView
           initialRegion={{

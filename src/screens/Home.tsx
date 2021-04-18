@@ -5,11 +5,11 @@ import { LinearGradient } from "expo-linear-gradient";
 import { ThemeContext } from "styled-components";
 import themes from "../styles/themes";
 import HomeLogo from "../images/HomeLogo/HomeLogo.png";
-import AccessContext from "../contexts/access";
+import { useAccess } from "../contexts/access";
 
 export default function Home() {
   const { title } = useContext(ThemeContext);
-  const { appAccess } = useContext(AccessContext);
+  const { appAccess } = useAccess();
 
   const { width, height } = Dimensions.get("window");
   const animatedValue = useRef(new Animated.Value(0)).current;
