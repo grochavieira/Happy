@@ -51,7 +51,7 @@ interface Orphanage {
   opening_hours: string;
   open_on_weekends: boolean;
   whatsapp: string;
-  images: Array<{ id: number; url: string }>;
+  images: Array<{ _id: string; url: string }>;
 }
 
 export default function OrphanageDetails() {
@@ -105,7 +105,7 @@ export default function OrphanageDetails() {
           {orphanage.images.map((image) => {
             return (
               <Image
-                key={image.id}
+                key={image._id}
                 style={styles.image}
                 source={{
                   uri: image.url,

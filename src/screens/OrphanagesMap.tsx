@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
-import { StyleSheet, Dimensions } from "react-native";
+import { StyleSheet, Dimensions, View, ActivityIndicator } from "react-native";
+import * as Location from "expo-location";
 import {
   CalloutContainer,
   CalloutText,
@@ -27,6 +28,26 @@ export default function OrphanagesMap() {
   const [orphanages, setOrphanages] = useState<Orphanage[]>([]);
   const { title } = useContext(ThemeContext);
   const navigation = useNavigation();
+  const [location, setLocation] = useState<any>(null);
+  const [errorMsg, setErrorMsg] = useState<any>(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    (async () => {
+      setIsLoading(true);
+      let { status } = await Location.requestPermissionsAsync();
+      if (status !== "granted") {
+        setErrorMsg("Permission to access location was denied");
+        setIsLoading(false);
+        return;
+      }
+
+      let location = await Location.getCurrentPositionAsync({});
+      console.log(location);
+      setLocation(location);
+      setIsLoading(false);
+    })();
+  }, []);
 
   useFocusEffect(() => {
     async function loadOrphanages() {
@@ -44,6 +65,21 @@ export default function OrphanagesMap() {
     navigation.navigate("SelectMapPosition");
   }
 
+  if (!location || isLoading) {
+    return (
+      <View
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: `${title === "dark" ? "#00000011" : "#00000011"}`,
+        }}
+      >
+        <ActivityIndicator size="large" color="#00C7C7" />
+      </View>
+    );
+  }
+
   return (
     <Container>
       <MapView
@@ -51,8 +87,8 @@ export default function OrphanagesMap() {
         provider={PROVIDER_GOOGLE}
         style={styles.map}
         initialRegion={{
-          latitude: -23.688435,
-          longitude: -46.5696544,
+          latitude: location.coords.latitude,
+          longitude: location.coords.longitude,
           latitudeDelta: 0.01,
           longitudeDelta: 0.01,
         }}
