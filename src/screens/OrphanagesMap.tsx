@@ -37,7 +37,7 @@ export default function OrphanagesMap() {
       setIsLoading(true);
       let { status } = await Location.requestPermissionsAsync();
       if (status !== "granted") {
-        setErrorMsg("Permission to access location was denied");
+        setErrorMsg("Permissão para acessar a localização foi negada!");
         setIsLoading(false);
         return;
       }

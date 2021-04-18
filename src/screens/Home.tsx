@@ -3,25 +3,25 @@ import { Dimensions, Animated } from "react-native";
 import { Container, Logo } from "../styles/screens/Home";
 import { LinearGradient } from "expo-linear-gradient";
 import { ThemeContext } from "styled-components";
-import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import themes from "../styles/themes";
 import HomeLogo from "../images/HomeLogo/HomeLogo.png";
+import AccessContext from "../contexts/access";
 
 export default function Home() {
   const { title } = useContext(ThemeContext);
-  const navigation = useNavigation();
+  const { appAccess } = useContext(AccessContext);
 
   const { width, height } = Dimensions.get("window");
   const animatedValue = useRef(new Animated.Value(0)).current;
 
-  function handleNavigateToOrphanagesMap() {
-    navigation.navigate("OrphanagesMap");
+  function handleAppAccess() {
+    appAccess();
   }
 
   const Animation = () => {
     Animated.timing(animatedValue, {
       toValue: 1,
-      duration: 2000,
+      duration: 1900,
       useNativeDriver: false,
     }).start();
   };
@@ -29,7 +29,7 @@ export default function Home() {
   useEffect(() => {
     Animation();
     setTimeout(() => {
-      handleNavigateToOrphanagesMap();
+      handleAppAccess();
     }, 2000);
   }, []);
 
