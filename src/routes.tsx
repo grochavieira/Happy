@@ -13,6 +13,7 @@ import FirstOnboarding from "./screens/FirstOnboarding";
 import SecondOnboarding from "./screens/SecondOnboarding";
 import Success from "./screens/Success";
 import CancelRegister from "./screens/CancelRegister";
+import OrphanageVisitation from "./screens/CreateOrphanage/OrphanageVisitation";
 const { Navigator, Screen } = createStackNavigator();
 
 export default function Routes() {
@@ -49,6 +50,14 @@ export default function Routes() {
         <Screen
           name="OrphanageData"
           component={OrphanageData}
+          options={{
+            headerShown: true,
+            header: () => <Header title="Informe os Dados" />,
+          }}
+        />
+        <Screen
+          name="OrphanageVisitation"
+          component={OrphanageVisitation}
           options={{
             headerShown: true,
             header: () => <Header title="Informe os Dados" />,

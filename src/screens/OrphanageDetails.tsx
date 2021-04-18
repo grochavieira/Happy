@@ -7,6 +7,7 @@ import {
   StyleSheet,
   Dimensions,
   Linking,
+  ActivityIndicator,
 } from "react-native";
 import {
   ContactButton,
@@ -31,7 +32,6 @@ import {
 import { useRoute } from "@react-navigation/native";
 import MapView, { Marker } from "react-native-maps";
 import { Feather, FontAwesome } from "@expo/vector-icons";
-import OrphanageDetailsLoading from "../components/Shimmer/OrphanageDetailsLoading";
 import mapMarkerImg from "../images/Local.png";
 import darkMap from "../styles/themes/darkMap.json";
 import api from "../services/api";
@@ -63,7 +63,9 @@ export default function OrphanageDetails() {
 
   useEffect(() => {
     async function loadOrphanage() {
+      setIsLoading(true);
       const { data } = await api.get(`/orphanages/${params.id}`);
+      setIsLoading(false);
       setOrphanage(data);
     }
     loadOrphanage();
@@ -81,20 +83,18 @@ export default function OrphanageDetails() {
     );
   }
 
-  setTimeout(() => {
-    setIsLoading(false);
-  }, 2000);
-
   if (!orphanage || isLoading) {
     return (
-      <ScrollView
+      <View
         style={{
           flex: 1,
-          backgroundColor: `${title === "dark" ? "#000" : "#ffffff"}`,
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: `${title === "dark" ? "#00000011" : "#00000011"}`,
         }}
       >
-        <OrphanageDetailsLoading />
-      </ScrollView>
+        <ActivityIndicator size="large" color="#00C7C7" />
+      </View>
     );
   }
 

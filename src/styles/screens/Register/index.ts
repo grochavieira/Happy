@@ -1,11 +1,6 @@
 import { RectButton } from "react-native-gesture-handler";
 import styled from "styled-components/native";
 
-export const Container = styled.ScrollView`
-  flex: 1;
-  background-color: ${(props) => props.theme.colors.background};
-`;
-
 export const NextButton = styled(RectButton)`
   background-color: ${(props) => props.theme.colors.tertiary};
   border-radius: 20px;
@@ -51,23 +46,4 @@ export const Input = styled.TextInput`
   height: 56px;
   padding: 18px 24px;
   margin-bottom: 16px;
-`;
-
-export const SwitchContainer = styled.View`
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 16px;
-`;
-
-export const ImagesInput = styled.TouchableOpacity`
-  background-color: ${(props) => `${props.theme.colors.formBackground}80`};
-  border-style: dashed;
-  border-color: #96d2f0;
-  border-width: 1.4px;
-  border-radius: 20px;
-  height: 56px;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 32px;
 `;
