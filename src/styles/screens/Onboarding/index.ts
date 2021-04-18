@@ -32,9 +32,3 @@ export const InactiveOnboarding = styled.View`
   margin-right: 2.5px;
   background-color: ${(props) => props.theme.colors.text};
 `;
-
-export const GoForward = styled.TouchableOpacity`
-  background-color: ${(props) => `${props.theme.colors.primaryLight}33`};
-  padding: 20px;
-  border-radius: 20px;
-`;

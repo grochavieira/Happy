@@ -24,6 +24,7 @@ export default function Routes() {
       >
         <Screen name="FirstOnboarding" component={FirstOnboarding} />
         <Screen name="SecondOnboarding" component={SecondOnboarding} />
+        <Screen name="Home" component={Home} />
         <Screen name="OrphanagesMap" component={OrphanagesMap} />
         <Screen
           name="OrphanageDetails"

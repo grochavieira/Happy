@@ -1,15 +1,15 @@
 import React from "react";
 import { Image } from "react-native";
 import { Feather } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
+import GoForward from "../components/GoForward";
 import {
-  GoForward,
   Footer,
   CurrentOnboarding,
   ActiveOnboarding,
   InactiveOnboarding,
 } from "../styles/screens/Onboarding";
-
 import {
   Container,
   Title,
@@ -17,6 +17,8 @@ import {
 import Onboarding2 from "../images/Onboarding-2.png";
 
 export default function SecondOnboarding() {
+  const navigation = useNavigation();
+
   return (
     <>
       <Container>
@@ -27,9 +29,7 @@ export default function SecondOnboarding() {
             <InactiveOnboarding />
             <ActiveOnboarding />
           </CurrentOnboarding>
-          <GoForward>
-            <Feather name="arrow-right" size={24} color="#2AB5D1" />
-          </GoForward>
+          <GoForward onAction={() => navigation.navigate("Home")} />
         </Footer>
       </Container>
     </>
