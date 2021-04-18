@@ -12,6 +12,7 @@ import Header from "./components/Header";
 import FirstOnboarding from "./screens/FirstOnboarding";
 import SecondOnboarding from "./screens/SecondOnboarding";
 import Success from "./screens/Success";
+import CancelRegister from "./screens/CancelRegister";
 const { Navigator, Screen } = createStackNavigator();
 
 export default function Routes() {
@@ -23,11 +24,12 @@ export default function Routes() {
           cardStyle: { backgroundColor: "#f2f3f5" },
         }}
       >
-        <Screen name="Success" component={Success} />
         <Screen name="FirstOnboarding" component={FirstOnboarding} />
         <Screen name="SecondOnboarding" component={SecondOnboarding} />
         <Screen name="Home" component={Home} />
         <Screen name="OrphanagesMap" component={OrphanagesMap} />
+        <Screen name="Success" component={Success} />
+        <Screen name="CancelRegister" component={CancelRegister} />
         <Screen
           name="OrphanageDetails"
           component={OrphanageDetails}
