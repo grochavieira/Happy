@@ -30,8 +30,7 @@ export default function OrphanagesMap() {
 
   useFocusEffect(() => {
     async function loadOrphanages() {
-      const { data } = await api.get("/orphanages");
-      console.log(data);
+      const { data } = await api.get("/orphanages?accepted=true");
       setOrphanages(data);
     }
     loadOrphanages();

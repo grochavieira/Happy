@@ -1,21 +1,23 @@
 import React, { useContext, useState } from "react";
 import { View, StyleSheet, Dimensions, Text } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import MapView, { MapEvent, Marker } from "react-native-maps";
+import { ThemeContext } from "styled-components/native";
+
+import AddModal from "../../components/AddModal";
+import { useRegister } from "../../contexts/register";
 import {
   Container,
   NextButton,
   NextButtonText,
 } from "../../styles/screens/MapPosition";
-import { useNavigation } from "@react-navigation/native";
-import MapView, { MapEvent, Marker } from "react-native-maps";
 import darkMap from "../../styles/themes/darkMap.json";
 import mapMarkerImg from "../../images/Local.png";
-import { ThemeContext } from "styled-components/native";
-import AddModal from "../../components/AddModal";
 
 export default function SelectMapPosition() {
   const navigation = useNavigation();
   const { title } = useContext(ThemeContext);
-  const [position, setPosition] = useState({ latitude: 0, longitude: 0 });
+  const { position, setPosition } = useRegister();
   const [isCursorActive, setIsCursorActive] = useState(true);
 
   function handleNextStep() {

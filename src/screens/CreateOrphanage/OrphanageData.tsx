@@ -11,24 +11,22 @@ import {
 import { Feather } from "@expo/vector-icons";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import * as ImagePicker from "expo-image-picker";
-
-interface OrphanageDataRouteParams {
-  position: {
-    latitude: number;
-    longitude: number;
-  };
-}
+import { useRegister } from "../../contexts/register";
 
 export default function OrphanageData() {
-  const [name, setName] = useState("");
-  const [about, setAbout] = useState("");
-  const [whatsapp, setWhatsapp] = useState("");
-  const [images, setImages] = useState<string[]>([]);
+  const {
+    name,
+    setName,
+    about,
+    setAbout,
+    whatsapp,
+    setWhatsapp,
+    images,
+    setImages,
+  } = useRegister();
 
   const navigation = useNavigation();
   const route = useRoute();
-
-  const params = route.params as OrphanageDataRouteParams;
 
   async function handleSelectImages() {
     const { status } = await ImagePicker.requestCameraRollPermissionsAsync();

@@ -12,48 +12,27 @@ import {
   NextButton,
   NextButtonText,
 } from "../../styles/screens/Register";
+import { useRegister } from "../../contexts/register";
+import { useNavigation } from "@react-navigation/core";
 
 export default function OrphanageVisitation() {
-  const [instructions, setInstructions] = useState("");
-  const [opening_hours, setOpeningHours] = useState("");
-  const [open_on_weekends, setOpenOnWeekends] = useState(false);
+  const navigation = useNavigation();
+  const {
+    instructions,
+    setInstructions,
+    opening_hours,
+    setOpeningHours,
+    open_on_weekends,
+    setOpenOnWeekends,
+    handleCreateOrphanage,
+  } = useRegister();
 
-  // async function handleCreateOrphanage() {
-  //     const { latitude, longitude } = params.position;
-
-  //     console.log({
-  //       name,
-  //       about,
-  //       instructions,
-  //       opening_hours,
-  //       open_on_weekends,
-  //       latitude,
-  //       longitude,
-  //     });
-
-  //     const data = new FormData();
-
-  //     data.append("name", name);
-  //     data.append("about", about);
-  //     data.append("latitude", String(latitude));
-  //     data.append("longitude", String(longitude));
-  //     data.append("instructions", instructions);
-  //     data.append("opening_hours", opening_hours);
-  //     data.append("open_on_weekends", String(open_on_weekends));
-  //     data.append("whatsapp", whatsapp);
-
-  //     images.forEach((image, index) => {
-  //       data.append("images", {
-  //         name: `image_${index}.jpg`,
-  //         type: "image/jpg",
-  //         uri: image,
-  //       } as any);
-  //     });
-
-  //     await api.post("orphanages", data);
-
-  //     navigation.navigate("OrphanagesMap");
-  //   }
+  async function handleRegister() {
+    const response = await handleCreateOrphanage();
+    if (response) {
+      navigation.navigate("Success");
+    }
+  }
 
   return (
     <>
@@ -85,7 +64,7 @@ export default function OrphanageVisitation() {
           />
         </SwitchContainer>
 
-        <NextButton onPress={() => {}}>
+        <NextButton onPress={handleRegister}>
           <NextButtonText>Cadastrar</NextButtonText>
         </NextButton>
       </Container>

@@ -1,9 +1,9 @@
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { Dimensions, Animated } from "react-native";
 import { Container, Logo } from "../styles/screens/Home";
 import { LinearGradient } from "expo-linear-gradient";
 import { ThemeContext } from "styled-components";
-import { useNavigation } from "@react-navigation/native";
+import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import themes from "../styles/themes";
 import HomeLogo from "../images/HomeLogo/HomeLogo.png";
 

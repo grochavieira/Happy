@@ -14,56 +14,59 @@ import SecondOnboarding from "./screens/SecondOnboarding";
 import Success from "./screens/Success";
 import CancelRegister from "./screens/CancelRegister";
 import OrphanageVisitation from "./screens/CreateOrphanage/OrphanageVisitation";
+import { RegisterProvider } from "./contexts/register";
 const { Navigator, Screen } = createStackNavigator();
 
 export default function Routes() {
   return (
     <NavigationContainer>
-      <Navigator
-        screenOptions={{
-          headerShown: false,
-          cardStyle: { backgroundColor: "#f2f3f5" },
-        }}
-      >
-        <Screen name="FirstOnboarding" component={FirstOnboarding} />
-        <Screen name="SecondOnboarding" component={SecondOnboarding} />
-        <Screen name="Home" component={Home} />
-        <Screen name="OrphanagesMap" component={OrphanagesMap} />
-        <Screen name="Success" component={Success} />
-        <Screen name="CancelRegister" component={CancelRegister} />
-        <Screen
-          name="OrphanageDetails"
-          component={OrphanageDetails}
-          options={{
-            headerShown: true,
-            header: () => <Header showCancel={false} title="Orfanato" />,
+      <RegisterProvider>
+        <Navigator
+          screenOptions={{
+            headerShown: false,
+            cardStyle: { backgroundColor: "#f2f3f5" },
           }}
-        />
-        <Screen
-          name="SelectMapPosition"
-          component={SelectMapPosition}
-          options={{
-            headerShown: true,
-            header: () => <Header title="Selecione no Mapa" />,
-          }}
-        />
-        <Screen
-          name="OrphanageData"
-          component={OrphanageData}
-          options={{
-            headerShown: true,
-            header: () => <Header title="Informe os Dados" />,
-          }}
-        />
-        <Screen
-          name="OrphanageVisitation"
-          component={OrphanageVisitation}
-          options={{
-            headerShown: true,
-            header: () => <Header title="Informe os Dados" />,
-          }}
-        />
-      </Navigator>
+        >
+          <Screen name="FirstOnboarding" component={FirstOnboarding} />
+          <Screen name="SecondOnboarding" component={SecondOnboarding} />
+          <Screen name="Home" component={Home} />
+          <Screen name="OrphanagesMap" component={OrphanagesMap} />
+          <Screen name="Success" component={Success} />
+          <Screen name="CancelRegister" component={CancelRegister} />
+          <Screen
+            name="OrphanageDetails"
+            component={OrphanageDetails}
+            options={{
+              headerShown: true,
+              header: () => <Header showCancel={false} title="Orfanato" />,
+            }}
+          />
+          <Screen
+            name="SelectMapPosition"
+            component={SelectMapPosition}
+            options={{
+              headerShown: true,
+              header: () => <Header title="Selecione no Mapa" />,
+            }}
+          />
+          <Screen
+            name="OrphanageData"
+            component={OrphanageData}
+            options={{
+              headerShown: true,
+              header: () => <Header title="Informe os Dados" />,
+            }}
+          />
+          <Screen
+            name="OrphanageVisitation"
+            component={OrphanageVisitation}
+            options={{
+              headerShown: true,
+              header: () => <Header title="Informe os Dados" />,
+            }}
+          />
+        </Navigator>
+      </RegisterProvider>
     </NavigationContainer>
   );
 }

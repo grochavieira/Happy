@@ -13,8 +13,8 @@ interface HeaderProps {
 export default function Header({ title, showCancel = true }: HeaderProps) {
   const navigation = useNavigation();
 
-  function handleGoBackToAppHomepage() {
-    navigation.navigate("OrphanagesMap");
+  function handleAbortRegistration() {
+    navigation.navigate("CancelRegister");
   }
 
   return (
@@ -25,7 +25,7 @@ export default function Header({ title, showCancel = true }: HeaderProps) {
       <Title>{title}</Title>
 
       {showCancel ? (
-        <BorderlessButton onPress={handleGoBackToAppHomepage}>
+        <BorderlessButton onPress={handleAbortRegistration}>
           <Feather name="x" size={24} color="#ff669d" />
         </BorderlessButton>
       ) : (

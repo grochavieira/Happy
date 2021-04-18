@@ -1,5 +1,4 @@
 import React from "react";
-import { Feather } from "@expo/vector-icons";
 
 import {
   Container,
@@ -12,11 +11,14 @@ import {
   ConfirmButtonText,
 } from "../styles/screens/CancelRegister";
 import { useNavigation } from "@react-navigation/core";
+import { useRegister } from "../contexts/register";
 
 export default function CancelRegister() {
   const navigation = useNavigation();
+  const { resetData } = useRegister();
 
   const handleCancelRegisterNavigation = () => {
+    resetData();
     navigation.navigate("OrphanagesMap");
   };
 
