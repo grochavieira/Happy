@@ -11,11 +11,13 @@ export default function Home() {
   const { title } = useContext(ThemeContext);
   const navigation = useNavigation();
 
+  const { width, height } = Dimensions.get("window");
+  const animatedValue = useRef(new Animated.Value(0)).current;
+
   function handleNavigateToOrphanagesMap() {
     navigation.navigate("OrphanagesMap");
   }
 
-  const animatedValue = useRef(new Animated.Value(0)).current;
   const Animation = () => {
     Animated.timing(animatedValue, {
       toValue: 1,
@@ -43,8 +45,8 @@ export default function Home() {
         end={[1, 1]}
         style={{
           position: "absolute",
-          width: Dimensions.get("window").width,
-          height: Dimensions.get("window").height + 100,
+          width,
+          height: height + 100,
         }}
       />
       <Animated.View
@@ -53,7 +55,13 @@ export default function Home() {
             {
               translateY: animatedValue.interpolate({
                 inputRange: [0, 0.5, 0.7, 0.9, 1],
-                outputRange: [0, -600, -500, -550, -550],
+                outputRange: [
+                  0,
+                  -(height / 2) - 100,
+                  -(height / 2),
+                  -(height / 2) - 50,
+                  -(height / 2) - 50,
+                ],
               }),
             },
           ],
@@ -63,7 +71,7 @@ export default function Home() {
           style={{
             transform: [
               {
-                translateY: 450,
+                translateY: height / 2,
               },
             ],
           }}
