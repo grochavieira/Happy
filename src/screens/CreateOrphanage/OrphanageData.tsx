@@ -1,6 +1,12 @@
 import React, { useState } from "react";
-import { View, StyleSheet, Image } from "react-native";
-import { Container, ImagesInput } from "../../styles/screens/Register/Data";
+import { View, StyleSheet, Image, Text } from "react-native";
+import {
+  Container,
+  ImagesInput,
+  ImageContainer,
+  DeleteImage,
+  DeleteImageText,
+} from "../../styles/screens/Register/Data";
 import {
   Input,
   Label,
@@ -12,6 +18,7 @@ import { Feather } from "@expo/vector-icons";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import * as ImagePicker from "expo-image-picker";
 import { useRegister } from "../../contexts/register";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 export default function OrphanageData() {
   const {
@@ -42,8 +49,6 @@ export default function OrphanageData() {
       mediaTypes: ImagePicker.MediaTypeOptions.Images,
     });
 
-    console.log(result);
-
     if (result.cancelled) {
       return;
     }
@@ -51,6 +56,11 @@ export default function OrphanageData() {
     const { uri: image } = result;
 
     setImages([...images, image]);
+  }
+
+  function handleDeleteImage(imageURI: string) {
+    const filteredImages = images.filter((image) => image !== imageURI);
+    setImages(filteredImages);
   }
 
   function handleOrphanageDataNavigation() {
@@ -80,11 +90,12 @@ export default function OrphanageData() {
       <View style={styles.uploadedImagesContainer}>
         {images.map((image) => {
           return (
-            <Image
-              key={image}
-              source={{ uri: image }}
-              style={styles.uploadedImage}
-            />
+            <ImageContainer key={image}>
+              <Image source={{ uri: image }} style={styles.uploadedImage} />
+              <DeleteImage onPress={() => handleDeleteImage(image)}>
+                <DeleteImageText> X </DeleteImageText>
+              </DeleteImage>
+            </ImageContainer>
           );
         })}
       </View>

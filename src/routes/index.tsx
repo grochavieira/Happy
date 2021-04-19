@@ -1,22 +1,14 @@
 import { NavigationContainer } from "@react-navigation/native";
-import React from "react";
-import { AccessProvider } from "../contexts/access";
+import React, { useContext, useEffect } from "react";
+
+import { useAccess } from "../contexts/access";
 import { RegisterProvider } from "../contexts/register";
-import Routes from "./routes";
+import AppRoutes from "./app.routes";
+import OnboardingRoutes from "./onboarding.routes";
 
-const App: React.FC = () => {
-  console.log("app");
-  return (
-    <>
-      <NavigationContainer>
-        <AccessProvider>
-          <RegisterProvider>
-            <Routes />
-          </RegisterProvider>
-        </AccessProvider>
-      </NavigationContainer>
-    </>
-  );
-};
+export default function Routes() {
+  const { hasAccessed } = useAccess();
+  console.log({ hasAccessed });
 
-export default App;
+  return hasAccessed ? <AppRoutes /> : <OnboardingRoutes />;
+}

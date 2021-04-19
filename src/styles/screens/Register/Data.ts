@@ -16,3 +16,25 @@ export const ImagesInput = styled.TouchableOpacity`
   align-items: center;
   margin-bottom: 32px;
 `;
+
+export const ImageContainer = styled.View`
+  position: relative;
+`;
+
+export const DeleteImage = styled.TouchableOpacity`
+  position: absolute;
+  top: 0px;
+  right: 7px;
+  background-color: #fff;
+  border-radius: 5px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding: 7px;
+`;
+
+export const DeleteImageText = styled.Text`
+  color: #ff3366;
+  font-family: "Nunito_700Bold";
+  font-size: 15px;
+  text-align: center;
+`;
