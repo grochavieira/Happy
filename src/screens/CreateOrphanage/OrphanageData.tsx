@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, StyleSheet, Image, Text } from "react-native";
+import { View, StyleSheet, Image, Text, Alert } from "react-native";
 import {
   Container,
   ImagesInput,
@@ -18,7 +18,6 @@ import { Feather } from "@expo/vector-icons";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import * as ImagePicker from "expo-image-picker";
 import { useRegister } from "../../contexts/register";
-import { TouchableOpacity } from "react-native-gesture-handler";
 
 export default function OrphanageData() {
   const {
@@ -64,7 +63,11 @@ export default function OrphanageData() {
   }
 
   function handleOrphanageDataNavigation() {
-    navigation.navigate("OrphanageVisitation");
+    if (name !== "" && about !== "" && whatsapp !== "" && images.length > 0) {
+      navigation.navigate("OrphanageVisitation");
+    } else {
+      Alert.alert("Insira os dados primeiro!");
+    }
   }
 
   return (
@@ -104,7 +107,10 @@ export default function OrphanageData() {
         <Feather name="plus" size={24} color="#15B6D6" />
       </ImagesInput>
 
-      <NextButton onPress={handleOrphanageDataNavigation}>
+      <NextButton
+        style={{ backgroundColor: "#00C7C7" }}
+        onPress={handleOrphanageDataNavigation}
+      >
         <NextButtonText>Próximo</NextButtonText>
       </NextButton>
     </Container>
