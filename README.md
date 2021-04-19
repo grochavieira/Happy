@@ -41,19 +41,14 @@ Uma aplicativo para cadastrar orfanatos de São Bernardo do Campo (SP), para que
 
 ## ⚙️ Funcionalidades
 
-- [x] Mobile;
-  - [x] Tela com a localização dos orfanatos;
-  - [x] Tela para selecionar a posição do orfanato;
-  - [x] Tela de cadastro de orfanatos;
-  - [x] Tela de detalhes de orfanatos.
-
-### A milha extra...
-
-- [x] styled-components na interface mobile;
-- [x] troca de temas no mobile, de acordo com as preferências do sistema;
-- [x] botão que redireciona para o whatsapp app (campo adicionado no back-end);
-- [x] tela Home para o app mobile;
-- [x] shimmer effect na tela de detalhes do mobile.
+- [x] Tela Splash;
+- [x] Telas de Onboarding;
+- [x] Tela Home com animação;
+- [x] Tela para ver os orfanatos cadastrados;
+- [x] Tela para selecionar a posição do orfanato;
+- [x] Tela de cadastro de orfanatos (dividida em 2 partes);
+- [x] Tela de detalhes de orfanatos.
+- [x] Animações de carregamento.
 
 ---
 
