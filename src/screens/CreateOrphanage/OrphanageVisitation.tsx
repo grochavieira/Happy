@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Switch, StyleSheet } from "react-native";
+import { Switch, StyleSheet, Alert } from "react-native";
 
+import Loading from "../../components/Loading";
 import {
   Container,
   SwitchContainer,
@@ -26,16 +27,22 @@ export default function OrphanageVisitation() {
     setOpenOnWeekends,
     handleCreateOrphanage,
   } = useRegister();
+  const [isLoading, setIsLoading] = useState(false);
 
   async function handleRegister() {
+    setIsLoading(true);
     const response = await handleCreateOrphanage();
+    setIsLoading(false);
     if (response) {
       navigation.navigate("Success");
+    } else {
+      Alert.alert("Não foi possível cadastrar o orfanato...");
     }
   }
 
   return (
     <>
+      {isLoading && <Loading />}
       <Container contentContainerStyle={{ padding: 24 }}>
         <Title>Visitação</Title>
 
