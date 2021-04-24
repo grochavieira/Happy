@@ -54,49 +54,64 @@ Uma aplicativo para cadastrar orfanatos de São Bernardo do Campo (SP), para que
 
 ## 🎨 Layout
 
+### Splash Screen
+
+<div align="center">
+    <img width="30%" src="./.github/home.png" />
+</div>
+
+### Onboarding
+
+<div align="center">
+    <img width="30%" src="./.github/onboarding1.png" />
+    <img width="30%" src="./.github/onboarding2.png " />
+</div>
+
 ### Home
 
 <div align="center">
-    <img width="30%" src="./.github/light_home.png" />
-    <img width="30%" src="./.github/dark_home.png " />
+    <img width="30%" src="./.github/home.png" />
 </div>
 
 ### Mapa
 
 <div align="center">
     <img width="30%" src="./.github/light_map_app.png" />
-    <img width="30%" src="./.github/dark_map_app.png " />
+    <img width="30%" src="./.github/dark_map_app.png" />
 </div>
 
 ### Detalhes
 
 <div align="center">
-    <img width="30%" src="./.github/light_details_1.png" />
-    <img width="30%" src="./.github/dark_details_1.png " />
-</div>
-
-<div align="center">
-    <img width="30%" src="./.github/light_details_2.png" />
-    <img width="30%" src="./.github/dark_details_2.png " />
+    <img width="30%" src="./.github/details1.png" />
+    <img width="30%" src="./.github/details2.png" />
 </div>
 
 ### Escolha do Local do Orfanato
 
 <div align="center">
-    <img width="30%" src="./.github/light_choose_position.png" />
-    <img width="30%" src="./.github/dark_choose_position.png " />
+    <img width="30%" src="./.github/info_select_map.png" />
+    <img width="30%" src="./.github/select_map.png" />
 </div>
 
 ### Formulário de Cadastro de Orfanato
 
 <div align="center">
-    <img width="30%" src="./.github/light_form_app1.png" />
-    <img width="30%" src="./.github/dark_form_app1.png " />
+    <img width="30%" src="./.github/register1_page1.png" />
+    <img width="30%" src="./.github/register2_page1.png" />
+    <img width="30%" src="./.github/register_page2.png" />
 </div>
 
+### Tela de Cadastro com Sucesso
+
 <div align="center">
-    <img width="30%" src="./.github/light_form_app2.png" />
-    <img width="30%" src="./.github/dark_form_app2.png " />
+    <img width="30%" src="./.github/success.png" />
+</div>
+
+### Tela para Cancelar Cadastro
+
+<div align="center">
+    <img width="30%" src="./.github/cancel.png" />
 </div>
 
 ---

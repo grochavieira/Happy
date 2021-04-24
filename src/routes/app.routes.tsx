@@ -1,6 +1,5 @@
 import React from "react";
 
-import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import OrphanagesMap from "../screens/OrphanagesMap";
@@ -11,8 +10,7 @@ import Header from "../components/Header";
 import Success from "../screens/Success";
 import CancelRegister from "../screens/CancelRegister";
 import OrphanageVisitation from "../screens/CreateOrphanage/OrphanageVisitation";
-import { RegisterProvider } from "../contexts/register";
-import { AccessProvider } from "../contexts/access";
+
 const { Navigator, Screen } = createStackNavigator();
 
 export default function AppRoutes() {
