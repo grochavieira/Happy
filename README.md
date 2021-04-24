@@ -57,7 +57,7 @@ Uma aplicativo para cadastrar orfanatos de São Bernardo do Campo (SP), para que
 ### Splash Screen
 
 <div align="center">
-    <img width="30%" src="./.github/home.png" />
+    <img width="30%" src="./.github/splash_screen.png" />
 </div>
 
 ### Onboarding
@@ -76,8 +76,7 @@ Uma aplicativo para cadastrar orfanatos de São Bernardo do Campo (SP), para que
 ### Mapa
 
 <div align="center">
-    <img width="30%" src="./.github/light_map_app.png" />
-    <img width="30%" src="./.github/dark_map_app.png" />
+    <img width="30%" src="./.github/map.png" />
 </div>
 
 ### Detalhes
