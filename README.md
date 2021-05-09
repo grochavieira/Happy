@@ -15,7 +15,7 @@
 </h1>
 
 <h4 align="center"> 
-	🚧  Aplicação em desenvolvimento - versão 2.0! 🚧
+	:tada:  Aplicação finalizada - versão 2.0! :tada:
 </h4>
 
 ## 🏁 Tópicos
